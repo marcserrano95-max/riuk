@@ -1,267 +1,1206 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RIUK · Live Techno · Valencia</title>
-<meta name="description" content="Riuk, live techno y hard techno desde Valencia. Fechas, sonido y contratación.">
-<meta property="og:title" content="RIUK · Live Techno">
-<meta property="og:image" content="img/cabina-roja.jpg">
-<meta property="og:description" content="Techno y hard techno desde Valencia. Fechas y booking.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DJ Riuk · Techno, hardtechno y schranz</title>
+<meta name="description" content="Riuk, DJ de techno, hardtechno y schranz en València. Su música, carteles, fechas y contratación."><meta property="og:title" content="DJ Riuk"><meta property="og:image" content="media/cabina-roja.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=BenchNine:wght@300;400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0a;--ink:#f2f0ec;--mute:#8d8a85;--red:#ff2b1c;--line:#232323;--card:#121212}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-.mono{font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.14em;font-size:12px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-
-/* NAV */
-.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:linear-gradient(#0a0a0aee,#0a0a0a00)}
-.logo{font-family:Anton;font-size:26px;letter-spacing:.32em}
-.logo b{color:var(--red);font-weight:400}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#000;padding:11px 18px;font-family:'Space Mono';font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:.2s}
-.btn:hover{background:var(--red);color:#fff}
-.btn.red{background:var(--red);color:#fff}
-.btn.red:hover{background:var(--ink);color:#000}
-
-/* HERO */
-.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 20px 40px;overflow:hidden;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;
- background:linear-gradient(90deg,#070707 0%,#070707cc 35%,#07070755 70%,#070707aa),linear-gradient(0deg,#070707 2%,transparent 45%),url(img/cabina-roja.jpg) 62% center/cover no-repeat,radial-gradient(60% 50% at 75% 35%,#ff2b1c55,transparent 70%),radial-gradient(40% 40% at 10% 90%,#ff2b1c22,transparent 70%),#070707}
-.grid-bg{position:absolute;inset:0;z-index:-1;opacity:.18;
- background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;
- mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent)}
-.wave{position:absolute;right:-5%;top:18%;width:70%;height:40%;z-index:-1;display:flex;align-items:center;gap:5px;opacity:.85}
-.wave i{flex:1;background:var(--red);border-radius:2px;animation:pulse 1.1s ease-in-out infinite;transform-origin:center}
-@keyframes pulse{0%,100%{transform:scaleY(.15)}50%{transform:scaleY(1)}}
-.hero h1{font-family:Anton;font-weight:400;font-size:clamp(110px,26vw,340px);line-height:.82;letter-spacing:-.01em}
-.hero h1 span{color:var(--red)}
-.hero-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:22px;border-top:1px solid var(--line);padding-top:20px}
-.tag{display:flex;gap:14px;align-items:center;max-width:520px}
-.tag .chip{background:var(--red);color:#fff;font-family:'Space Mono';font-weight:700;font-size:12px;padding:6px 9px;letter-spacing:.1em}
-.tag p{color:#cfccc6;font-size:17px}
-.next{text-align:right}
-.next .mono{color:var(--mute)}
-.next strong{display:block;font-family:Anton;font-weight:400;font-size:26px;color:var(--red);letter-spacing:.03em}
-
-/* SECTIONS */
-.sec{padding:110px 0;border-top:1px solid var(--line)}
-.head{display:flex;gap:18px;align-items:baseline;margin-bottom:40px}
-.head .num{color:var(--red)}
-h2{font-family:Anton;font-weight:400;font-size:clamp(46px,8vw,96px);line-height:.92;text-transform:uppercase}
-h2 em{font-style:normal;color:var(--red)}
-.lead{color:#bdb9b2;font-size:18px;max-width:620px;margin-top:18px}
-
-/* ABOUT */
-.about{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
-.about p{color:#cfccc6;font-size:18px;margin-bottom:18px}
-.seal{border-left:3px solid var(--red);padding:6px 0 6px 18px;margin-top:26px}
-.seal .mono{color:var(--red);margin-bottom:6px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-.stat{background:var(--bg);padding:26px 22px}
-.stat b{display:block;font-family:Anton;font-weight:400;font-size:54px;line-height:1}
-.stat b span{color:var(--red)}
-.stat .mono{color:var(--mute);margin-top:8px;display:block}
-
-/* LIVE */
-.live{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.track{background:var(--card);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:18px;transition:.25s;cursor:pointer}
-.track:hover{border-color:var(--red);transform:translateY(-3px)}
-.track .top{display:flex;justify-content:space-between;color:var(--mute)}
-.track h3{font-family:Anton;font-weight:400;font-size:30px;line-height:1;text-transform:uppercase}
-.bars{height:46px;display:flex;align-items:center;gap:3px}
-.bars i{flex:1;background:#333;border-radius:1px}
-.track.on .bars i{background:var(--red);animation:pulse .9s ease-in-out infinite}
-.play{width:46px;height:46px;border-radius:50%;background:var(--red);display:grid;place-items:center}
-.play svg{fill:#fff;width:16px}
-.note{color:var(--mute);font-size:14px;margin-top:18px}
-
-/* DATES */
-.dates{border-top:1px solid var(--line)}
-.date{display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line);transition:.2s}
-.date:hover{background:#111;padding-left:14px}
-.d{font-family:Anton;font-size:34px;line-height:1}
-.d small{display:block;font-family:'Space Mono';font-size:12px;color:var(--mute);letter-spacing:.14em;margin-top:6px}
-.ev h3{font-family:Anton;font-weight:400;font-size:28px;text-transform:uppercase;line-height:1.05}
-.ev p{color:var(--mute);font-size:14px;margin-top:4px}
-.venue{color:var(--red);text-align:right}
-
-/* POSTERS */
-.posters{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;scrollbar-width:thin}
-.poster{flex:0 0 280px;aspect-ratio:4/5;scroll-snap-align:start;position:relative;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid var(--line)}
-.poster h4{font-family:Anton;font-weight:400;font-size:46px;line-height:.9;text-transform:uppercase}
-.poster .ln{font-family:'Space Mono';font-size:11px;letter-spacing:.08em;text-transform:uppercase;line-height:1.7}
-.poster .ln b{color:#fff;background:var(--red);padding:0 4px}
-.p1{background:linear-gradient(160deg,#e9dcc4,#c9b48f);color:#1b1b1b}
-.p2{background:radial-gradient(circle at 50% 30%,#3a2a00,#0b0b0b);color:#ffd338}
-.p3{background:linear-gradient(180deg,#121a2c,#05060a);color:#e8eefc}
-.p4{background:linear-gradient(180deg,#0b1220,#1b0f2b);color:#5cf2d0}
-.p5{background:#0b0b0b;color:#fff}
-.p6{background:#ffcf1f;color:#000}
-.p7{background:linear-gradient(180deg,#0f2b1b,#050a07);color:#b8ff6a}
-.p2 .ln b,.p6 .ln b{color:#fff}
-.poster.img{padding:0;aspect-ratio:auto;height:420px;flex:0 0 auto;background:#111}
-.poster.img img{height:100%;width:auto;display:block}
-.ph{margin:0 0 26px;position:relative;border:1px solid var(--line)}
-.ph img{width:100%;display:block;filter:grayscale(.2) contrast(1.05)}
-.ph figcaption{position:absolute;left:12px;bottom:10px;background:var(--red);color:#fff;padding:4px 8px}
-.hint{color:var(--mute);margin-top:12px}
-
-/* CREW */
-.crew{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.crew span{border:1px solid var(--line);padding:10px 16px;font-family:'Space Mono';font-size:13px;text-transform:uppercase;letter-spacing:.1em;transition:.2s}
-.crew span:hover{border-color:var(--red);color:var(--red)}
-
-/* BOOKING */
-.book{background:var(--red);color:#fff;padding:110px 0;position:relative;overflow:hidden}
-.book h2{font-size:clamp(60px,12vw,170px);line-height:.85}
-.book p{font-size:19px;max-width:560px;margin:24px 0 34px;color:#fff}
-.book .btn{background:#000;color:#fff}
-.book .btn:hover{background:#fff;color:#000}
-.book .ctas{display:flex;flex-wrap:wrap;gap:12px}
-.book .ghost{background:transparent;border:2px solid #000;color:#000}
-footer{padding:28px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mute)}
-
-.reveal{opacity:0;transform:translateY(24px);transition:.8s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
-
-@media(max-width:820px){
- .about{grid-template-columns:1fr;gap:40px}
- .live{grid-template-columns:1fr}
- .date{grid-template-columns:1fr;gap:6px}
- .venue{text-align:left}
- .wave{width:110%;right:-30%;opacity:.45}
- .next{text-align:left}
- .nav .btn{padding:9px 12px}
- .sec{padding:80px 0}
+/* Layout: club-night landing (NOCTRA style) — full-bleed video hero, numbered sections, sticky stacked poster cards, accordion photo strip, ticket footer */
+:root{
+  color-scheme:dark;
+  --bg:#080808; --ink:#111111; --panel:#242424; --line:rgba(242,241,237,.12);
+  --fg:#f2f1ed; --fg-80:rgba(255,255,255,.8); --dim:rgba(255,255,255,.5); --mute:#8a8a8a;
+  --lime:#ff2a1f; --btn:#d9d9d6;
+  --display:"Bebas Neue",Impact,"Arial Narrow",sans-serif;
+  --body:"BenchNine","Arial Narrow",sans-serif;
+  --ui:"Inter",system-ui,sans-serif;
+  --ease:cubic-bezier(.44,0,.56,1);
+  --gx:max(28px,env(safe-area-inset-left,0px)); --gxr:max(28px,env(safe-area-inset-right,0px));
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:clip}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:21px;line-height:1.4;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.wrap{padding-left:var(--gx);padding-right:var(--gxr)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+
+/* type */
+.h-xl{font-family:var(--display);font-weight:400;font-size:clamp(64px,10.2vw,130px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase;text-wrap:balance}
+.dot{display:inline-block;width:.12em;height:.12em;background:var(--lime);margin-left:.03em;vertical-align:baseline}
+.eyebrow{font-family:var(--body);font-size:20px;line-height:1.1;display:flex;gap:8px;margin-bottom:6px}
+.eyebrow b{color:var(--lime);font-weight:400}
+.lede{font-family:var(--body);font-weight:300;font-size:clamp(22px,2.3vw,30px);letter-spacing:.08em;line-height:.95;color:var(--fg-80);max-width:24ch}
+.lime{color:var(--lime)}
+.ui-label{font-family:var(--display);font-size:17px;letter-spacing:.29em;text-transform:uppercase}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;height:38px;padding:0 10px 0 28px;font-family:var(--display);font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--bg);background:var(--lime);transition:background .3s var(--ease)}
+.btn .ar{width:22px;height:22px;border-radius:50%;background:var(--fg);display:grid;place-items:center;transition:transform .4s var(--ease)}
+.btn .ar svg{width:12px;height:12px;stroke:var(--bg)}
+.btn:hover .ar{transform:translateX(4px)}
+.btn-gray{background:var(--btn)}
+.btn-gray .ar{background:var(--bg)} .btn-gray .ar svg{stroke:var(--fg)}
+
+/* nav */
+.nav{position:fixed;z-index:50;inset:env(safe-area-inset-top,0px) 0 auto 0;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));background:linear-gradient(180deg,rgba(8,8,8,.85),rgba(8,8,8,.45));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.logo{font-family:var(--ui);font-weight:300;font-size:22px;letter-spacing:.42em;text-transform:uppercase;white-space:nowrap}
+.links{display:flex;gap:clamp(18px,3vw,44px)}
+.links a{transition:color .2s;white-space:nowrap}
+@media (max-width:1360px){.links{display:none}.burger{display:block}}
+.links a:hover{color:var(--lime)}
+.nav-r{display:flex;align-items:center;gap:14px}
+.sound{display:flex;align-items:center;gap:12px;height:42px;padding:0 14px;border:1px solid var(--line);background:rgba(8,8,8,.7);border-radius:6px;font-family:var(--ui);font-weight:700;font-size:12px;letter-spacing:.06em}
+.sound .led{width:6px;height:6px;border-radius:50%;background:var(--mute);transition:background .3s}
+.sound.on .led{background:var(--lime);box-shadow:0 0 10px var(--lime)}
+.eq{display:flex;align-items:center;gap:2px;height:12px}
+.eq i{width:2px;height:4px;background:var(--lime);border-radius:1px}
+.sound.on .eq i{animation:eq .9s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:-.3s!important}.eq i:nth-child(3){animation-delay:-.6s!important}.eq i:nth-child(4){animation-delay:-.15s!important}
+@keyframes eq{0%,100%{height:3px}50%{height:12px}}
+.sound .sep{width:1px;height:18px;background:var(--line)}
+.sound .lbl{white-space:nowrap}
+.sound .time{color:var(--mute);font-weight:500;font-variant-numeric:tabular-nums}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:6px}
+.burger span{display:block;width:16px;height:1.5px;background:var(--fg);margin:4px auto;transition:transform .3s var(--ease)}
+.menu{position:fixed;z-index:49;inset:calc(64px + env(safe-area-inset-top,0px)) 0 0 0;background:var(--bg);padding:28px var(--gxr) 28px var(--gx);display:flex;flex-direction:column;gap:4px;opacity:0;pointer-events:none;transform:translateY(-10px);transition:.35s var(--ease)}
+.menu a.big{font-family:var(--display);font-size:56px;line-height:1;border-bottom:1px solid var(--line);padding:10px 0}
+.menu-open .menu{opacity:1;pointer-events:auto;transform:none}
+.menu-open .burger span:first-child{transform:translateY(2.75px) rotate(45deg)}
+.menu-open .burger span:last-child{transform:translateY(-2.75px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,980px);display:flex;flex-direction:column;justify-content:space-between;padding-top:96px;overflow:hidden;isolation:isolate}
+.hero-vid{position:absolute;inset:0;z-index:-2}
+.hero-vid video,.hero-vid img{width:100%;height:100%;object-fit:cover;animation:zoomIn 2.2s var(--ease) both}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,8,8,.8) 0%,rgba(8,8,8,.25) 38%,rgba(8,8,8,.35) 62%,rgba(8,8,8,.95) 100%),linear-gradient(90deg,rgba(8,8,8,.6),transparent 60%)}
+.hero-vid img{object-position:62% 35%}
+@keyframes zoomIn{from{transform:scale(1.12);opacity:0}to{transform:none;opacity:1}}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(96px,21vw,300px);line-height:.78;letter-spacing:-.01em;display:flex;flex-direction:column}
+.hero h1 .row{display:flex;overflow:hidden;padding-top:.06em}
+.hero h1 .ch{display:inline-block;transform:translateY(105%);animation:up 1s var(--ease) forwards;animation-delay:calc(.35s + var(--i)*60ms)}
+.hero h1 .row:last-child{color:var(--lime)}
+@keyframes up{to{transform:none}}
+.hero-sub{display:flex;align-items:center;gap:14px;margin-top:18px;opacity:0;animation:fadeUp 1s var(--ease) 1.1s forwards}
+.tag{font-family:var(--display);font-size:18px;letter-spacing:.08em;background:var(--lime);color:var(--bg);padding:5px 10px 3px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
+.hero-foot{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;padding-bottom:22px;opacity:0;animation:fadeUp 1s var(--ease) 1.3s forwards}
+.listen{display:flex;align-items:center;gap:18px}
+.wave{width:min(340px,48vw);height:34px}
+.wave path{fill:none;stroke:var(--lime);stroke-width:1.5}
+.listen small{display:block;color:var(--fg-80);font-size:16px;margin-bottom:4px}
+.playbtn{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--lime);display:grid;place-items:center;flex:none;transition:background .3s}
+.playbtn svg{width:16px;height:16px;fill:var(--lime)}
+.playbtn:hover{background:rgba(255,42,31,.12)}
+.next{font-family:var(--display);color:var(--lime);font-size:clamp(20px,2vw,26px);line-height:1.02;text-align:right;letter-spacing:.02em}
+.next small{display:block;font-size:15px;color:var(--fg-80);letter-spacing:.2em;margin-bottom:6px}
+
+/* marquee */
+.marq{overflow:hidden;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0 8px}
+.marq .trk{display:flex;width:max-content;animation:mq 28s linear infinite}
+.marq span{font-family:var(--ui);font-weight:700;font-size:clamp(22px,2.6vw,36px);letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;padding:0 22px;display:flex;align-items:center;gap:22px}
+.marq span::before{content:"*";color:var(--lime)}
+.marq span:nth-child(3n+2){color:var(--lime)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding-top:clamp(44px,5vw,76px);padding-bottom:clamp(16px,2vw,32px)}
+.head{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end;margin-bottom:clamp(24px,3vw,44px)}
+.head .side{display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding-bottom:10px}
+[data-reveal]{transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js [data-reveal].pre{opacity:.001;transform:translateY(50px)}
+
+/* 01 manifesto */
+.manifesto{display:grid;grid-template-columns:1.15fr 1fr .85fr;gap:clamp(20px,3vw,44px);align-items:start}
+.manifesto .lede{margin-top:clamp(0px,4vw,60px)}
+.portrait{position:relative;aspect-ratio:4/5;overflow:hidden;max-width:100%}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:grayscale(1) contrast(1.15) brightness(.9)}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,42,31,.0) 30%,rgba(255,42,31,.35));mix-blend-mode:multiply}
+.portrait::before{content:"";position:absolute;right:16%;top:0;bottom:0;width:3px;background:var(--lime);box-shadow:0 0 30px 6px rgba(255,42,31,.55);z-index:1;opacity:.85}
+.sig{display:flex;justify-content:space-between;align-items:end;margin-top:28px;gap:20px;flex-wrap:wrap}
+.sig .mini{font-family:var(--display);font-size:20px;letter-spacing:.04em}
+.type{font-family:var(--display);color:var(--lime);font-size:20px;letter-spacing:.06em;line-height:1.05;text-align:right}
+
+/* 02 reels */
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+.reel{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--ink);border:1px solid var(--line)}
+.reel video,.reel > img{width:100%;height:100%;object-fit:cover}
+.reel .by{font-family:var(--display);font-size:20px;letter-spacing:.06em;color:var(--fg-80);margin-top:4px}
+.reel.loud{outline:1px solid var(--lime)}
+.mute svg path{stroke-linecap:round}
+.reel .cap{position:absolute;left:0;right:0;bottom:0;padding:18px;display:flex;justify-content:space-between;align-items:end;background:linear-gradient(0deg,rgba(8,8,8,.9),transparent)}
+.reel h3{font-family:var(--display);font-weight:400;font-size:40px;line-height:.9}
+.reel .ui-label{color:var(--lime);font-size:14px}
+.mute{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--lime);display:grid;place-items:center;background:rgba(8,8,8,.5)}
+.mute svg{width:18px;height:18px;stroke:var(--lime);fill:none;stroke-width:1.8}
+.mute .on{display:none}.reel.loud .mute .on{display:block}.reel.loud .mute .off{display:none}
+.reel-note{border:1px solid var(--line);background:var(--ink);padding:28px;margin-top:14px;display:grid;grid-template-columns:1fr 1.4fr auto;align-items:center;gap:32px}
+.reel-note p{color:var(--dim);font-size:21px;max-width:28ch}
+.specs{display:grid;grid-template-columns:auto 1fr;border-top:1px solid var(--line)}
+.specs dt,.specs dd{padding:12px 0;border-bottom:1px solid var(--line)}
+.specs dt{font-size:16px;color:var(--mute);padding-right:20px}
+.specs dd{font-family:var(--display);font-size:26px;line-height:1;text-align:right}
+
+/* 03 posters (sticky stack) */
+.stack{display:flex;flex-direction:column;gap:0;padding-bottom:40px}
+.pcard{position:sticky;top:calc(80px + var(--n)*50px);height:min(78vh,640px);min-height:440px;overflow:hidden;border:1px solid var(--line);background:var(--ink);display:grid;grid-template-columns:1fr auto;margin-bottom:24px;box-shadow:0 -20px 40px rgba(0,0,0,.6)}
+.pcard .bgblur{display:none}
+.pcard .info{position:relative;padding:22px 26px 26px;display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(20px,8vh,90px)}
+.chip{align-self:flex-start;font-family:var(--display);font-size:18px;letter-spacing:.08em;color:var(--lime);background:rgba(8,8,8,.75);padding:6px 10px 4px}
+.pcard h3{font-family:var(--display);font-weight:400;font-size:clamp(48px,6vw,84px);line-height:.85}
+.pcard .meta{font-family:var(--display);font-size:22px;letter-spacing:.04em;line-height:1.15;color:var(--fg-80);margin:10px 0 18px}
+.pcard p{color:var(--fg-80);max-width:34ch;margin-bottom:22px}
+.pcard .poster{position:relative;height:100%;padding:22px 22px 22px 0;display:flex}
+.pcard .poster button{display:block;height:100%;aspect-ratio:4/5;max-width:46vw;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.pcard .poster img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.pcard .poster button:hover img{transform:scale(1.04)}
+
+/* 04 awards */
+.awards{display:grid;grid-template-columns:1.05fr .95fr .8fr;gap:14px;align-items:stretch}
+.aw{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--ink)}
+.aw img,.aw video{width:100%;height:100%;object-fit:cover}
+.aw.tall{min-height:520px}
+.aw.tall > button{position:absolute;inset:0}
+.aw .cap{position:absolute;left:14px;bottom:14px;right:14px;display:flex;justify-content:space-between;align-items:end;gap:10px}
+.aw .num{font-family:var(--display);font-size:20px;color:var(--lime);background:rgba(8,8,8,.75);padding:6px 10px 4px;letter-spacing:.06em}
+.award-card{display:flex;flex-direction:column;gap:14px}
+.award-txt{border:1px solid var(--line);background:var(--ink);padding:26px;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:26px}
+.award-txt .big{font-family:var(--display);font-size:clamp(44px,4.4vw,64px);line-height:.88}
+.award-txt p{color:var(--dim)}
+.award-txt .ui-label{color:var(--lime);font-size:15px}
+.aw.vid{aspect-ratio:9/12}
+
+/* 01 bio */
+.bio p{color:var(--fg-80);font-weight:300;font-size:21px;line-height:1.32;letter-spacing:.03em;max-width:40ch;margin-top:16px}
+.bio .lede{color:var(--fg);margin-top:0;max-width:26ch}
+.bio .seal{border-left:2px solid var(--lime);padding-left:14px;color:var(--fg)}
+.bio .seal span{display:block;font-family:var(--display);color:var(--lime);font-size:18px;letter-spacing:.14em;margin-bottom:4px}
+
+/* 03 coverflow */
+.cf{position:relative;display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(20px,4vw,60px);align-items:center;padding:0}
+.cf-ghost{position:absolute;left:calc(-1*var(--gx));right:calc(-1*var(--gxr));top:50%;transform:translateY(-50%);display:flex;width:max-content;animation:mq 50s linear infinite;pointer-events:none;z-index:0}
+.cf-ghost span{font-family:var(--display);font-size:clamp(120px,16vw,240px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(242,241,237,.08);white-space:nowrap}
+.cf-stage{position:relative;z-index:1;height:clamp(420px,42vw,560px);perspective:1400px;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none;cursor:grab}
+.cf-stage:active{cursor:grabbing}
+.cf-card{position:absolute;left:50%;top:50%;width:min(380px,58%);aspect-ratio:4/5;margin:0;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.22,1,.36,1),opacity .9s,filter .9s;box-shadow:0 40px 90px rgba(0,0,0,.65);will-change:transform}
+.cf-card img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.cf-card .glare{position:absolute;inset:0;background:radial-gradient(circle at var(--gx2,50%) var(--gy2,30%),rgba(255,255,255,.28),transparent 45%);mix-blend-mode:overlay;opacity:0;transition:opacity .4s;pointer-events:none}
+.cf-card.on .glare{opacity:1}
+.cf-card.on{outline:1px solid rgba(255,42,31,.45)}
+.cf-stage.drag .cf-card{transition:none}
+.cf-info{position:relative;z-index:1;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.cf-txt{transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.cf-txt.swap{opacity:0;transform:translateY(14px)}
+.cf-txt h3{font-family:var(--display);font-weight:400;font-size:clamp(52px,6vw,88px);line-height:.85;margin-top:14px}
+.cf-txt .meta{font-family:var(--display);font-size:22px;letter-spacing:.04em;line-height:1.15;color:var(--lime);margin:12px 0 14px}
+.cf-txt p{color:var(--fg-80);max-width:32ch}
+.cf-ctrl,.deck-ctrl{display:flex;align-items:center;gap:14px}
+.cf-btn{width:48px;height:48px;border:1px solid var(--line);display:grid;place-items:center;background:var(--ink);transition:background .25s,border-color .25s}
+.cf-btn svg{width:16px;height:16px;stroke:var(--fg)}
+.cf-btn:hover{background:var(--lime);border-color:var(--lime)} .cf-btn:hover svg{stroke:var(--bg)}
+.cf-bar{width:140px;height:2px;background:var(--line);position:relative;overflow:hidden}
+.cf-bar i{position:absolute;inset:0 auto 0 0;width:33.3%;background:var(--lime);transition:width .6s var(--ease)}
+
+/* 05 deck */
+.daywrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.day-txt .lede{margin-top:20px;max-width:30ch}
+.deck-ctrl{margin-top:34px}
+.dk-count{font-family:var(--display);font-size:26px;letter-spacing:.06em;min-width:76px;text-align:center}
+.dk-count b{color:var(--lime);font-weight:400}
+.swipe-hint{margin-top:16px;color:var(--mute);font-size:18px;display:flex;gap:10px;align-items:center}
+.swipe-hint span{color:var(--lime);display:inline-block;animation:nudge 1.6s ease-in-out infinite}
+.swipe-hint span:last-child{animation-direction:reverse}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(-6px)}}
+.deck{position:relative;width:min(440px,100%);aspect-ratio:3/4;justify-self:center;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.dk{position:absolute;inset:0;margin:0;overflow:hidden;border:1px solid var(--line);background:var(--ink);box-shadow:0 30px 70px rgba(0,0,0,.6);transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .4s;cursor:grab;will-change:transform}
+.dk.reel{aspect-ratio:auto}
+.dk img,.dk video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.dk .cap{position:absolute;left:14px;right:14px;bottom:14px;display:flex;justify-content:space-between;align-items:end}
+.dk.reel .cap{left:0;right:0;bottom:0;padding:18px}
+.dk .num{font-family:var(--display);font-size:20px;color:var(--lime);background:rgba(8,8,8,.75);padding:6px 10px 4px;letter-spacing:.06em}
+.deck.drag .dk.top{transition:none;cursor:grabbing}
+
+/* 02 reels: expanding + tilt (desktop), swipe carousel (phone) */
+.reels{display:flex;gap:14px;height:min(72vh,660px);perspective:1200px}
+.reels .reel{flex:1;aspect-ratio:auto;height:100%;transition:flex .8s cubic-bezier(.22,1,.36,1),filter .6s,transform .5s cubic-bezier(.22,1,.36,1);transform-style:preserve-3d;cursor:pointer}
+.reels .reel.act{flex:2.2}
+.reels .reel:not(.act){filter:brightness(.5) saturate(.7)}
+.reels .reel h3{transition:font-size .6s}
+.reels .reel:not(.act) h3{font-size:28px}
+.reels .reel::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,40%),rgba(255,42,31,.18),transparent 50%);opacity:0;transition:opacity .4s;pointer-events:none}
+.reels .reel.act::after{opacity:1}
+.reel-dots{display:none;justify-content:center;gap:8px;margin-top:14px}
+.reel-dots i{width:22px;height:3px;background:var(--line);transition:background .3s,width .3s}
+.reel-dots i.on{background:var(--lime);width:40px}
+
+/* 06 studio compare */
+.cmp{position:relative;aspect-ratio:16/11;max-height:82vh;overflow:hidden;border:1px solid var(--line);cursor:ew-resize;touch-action:pan-y;user-select:none;-webkit-user-select:none;--p:50%;width:min(1180px,100%);margin:0 auto}
+.cmp img{object-position:50% 58%}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp-b{position:absolute;inset:0;clip-path:inset(0 0 0 var(--p))}
+.cmp-line{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:var(--lime);box-shadow:0 0 18px 3px rgba(255,42,31,.6)}
+.cmp-knob{position:absolute;top:50%;left:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 30px rgba(255,42,31,.7);transition:transform .3s}
+.cmp:active .cmp-knob{transform:scale(1.12)}
+.cmp-knob svg{width:22px;height:22px;stroke:var(--bg);fill:none;stroke-width:2.2}
+.cmp-tag{position:absolute;top:14px;font-family:var(--display);font-size:18px;letter-spacing:.08em;background:rgba(8,8,8,.75);padding:6px 10px 4px;color:var(--lime);transition:opacity .3s}
+.cmp-tag.l{left:14px}.cmp-tag.r{right:14px}
+
+/* 07 gallery: draggable drifting strip */
+.gal{position:relative;overflow:hidden;margin-left:calc(-1*var(--gx));margin-right:calc(-1*var(--gxr));padding:30px 0 40px;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.gal.drag{cursor:grabbing}
+.gal-track{display:flex;gap:22px;width:max-content;will-change:transform}
+.gi{position:relative;flex:none;width:clamp(220px,22vw,320px);aspect-ratio:3/4;margin:0;overflow:hidden;border:1px solid var(--line);background:var(--ink);transform:translateY(var(--y,0)) rotate(calc(var(--r,0deg) + var(--sk,0deg)));transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .4s}
+.gi:nth-child(3n+1){--r:-3deg;--y:18px}.gi:nth-child(3n+2){--r:2.5deg;--y:-14px}.gi:nth-child(3n){--r:-1deg;--y:6px}
+.gi img{width:100%;height:100%;object-fit:cover;pointer-events:none;filter:grayscale(1) contrast(1.1);transition:filter .6s,transform 1s cubic-bezier(.22,1,.36,1)}
+.gi:hover{--r:0deg;--y:-10px;box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px var(--lime);z-index:2}
+.gi:hover img{filter:none;transform:scale(1.06)}
+.gi figcaption{position:absolute;left:12px;bottom:12px;font-family:var(--display);font-size:22px;letter-spacing:.04em;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.gi figcaption b{color:var(--lime);font-weight:400}
+.wrap-hint{margin-top:4px}
+@media (hover:none){.gi img{filter:none}}
+
+/* 05 day + 06 studio */
+.day{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.day .aw{aspect-ratio:3/4}
+.studio{display:flex;flex-direction:column;gap:clamp(28px,4vw,48px)}
+.studio-txt{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end}
+.studio-txt .lede{margin-top:0}
+.studio .aw{aspect-ratio:1200/1379}
+.studio-txt .lede{margin-top:20px}
+.aw button img{transition:transform .8s var(--ease)}
+.aw button:hover img{transform:scale(1.04)}
+
+/* 05 gallery accordion */
+.strip{display:flex;gap:12px;height:min(70vh,620px)}
+.panel{position:relative;flex:1;min-width:0;overflow:hidden;transition:flex .7s var(--ease);background:var(--ink)}
+.panel img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.75);transition:filter .7s var(--ease),transform 1.2s var(--ease)}
+.panel:hover,.panel:focus-visible{flex:3.2}
+.panel:hover img,.panel:focus-visible img{filter:none;transform:scale(1.03)}
+.panel figcaption{position:absolute;left:12px;right:12px;bottom:12px;font-family:var(--display);font-size:24px;line-height:1;display:flex;gap:10px;white-space:nowrap;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.panel figcaption b{color:var(--lime);font-weight:400}
+.panel .t{opacity:0;transform:translateY(8px);transition:.5s var(--ease)}
+.panel:hover .t,.panel:focus-visible .t{opacity:1;transform:none}
+
+/* 06 about */
+.about{position:relative;overflow:hidden;isolation:isolate;padding-top:clamp(52px,6vw,90px);margin-top:clamp(16px,2vw,32px)}
+.about .bg{position:absolute;inset:0;z-index:-1}
+.about .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(1) contrast(1.2) brightness(.55)}
+.about .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(8,8,8,.35) 30%,rgba(255,42,31,.18) 70%,var(--bg) 100%),linear-gradient(90deg,rgba(8,8,8,.85),rgba(8,8,8,.2) 60%);}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.about .lede{margin-top:20px;max-width:30ch}
+.rules{font-family:var(--display);color:var(--lime);font-size:clamp(52px,6vw,84px);line-height:.86;text-align:left;justify-self:end}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(56px,7vw,100px);border-top:1px solid var(--line)}
+.stat{padding:22px 10px 30px;text-align:center}
+.stat + .stat{border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--ui);font-weight:700;font-size:clamp(44px,6.6vw,104px);line-height:1;letter-spacing:-.04em;color:var(--lime)}
+.stat span{display:block;font-family:var(--ui);font-weight:700;font-size:clamp(14px,1.6vw,22px);text-transform:uppercase;margin-top:10px;letter-spacing:-.01em}
+
+/* 08 pitch */
+.pitch{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,64px);margin-top:clamp(48px,6vw,90px);align-items:start}
+.pitch-lead{font-family:var(--body);font-weight:400;font-size:clamp(26px,2.6vw,38px);line-height:1.08;letter-spacing:.02em;color:var(--fg);max-width:30ch}
+.pitch-lead em{font-style:normal;color:var(--lime)}
+.pitch-sub{color:var(--fg-80);font-weight:300;font-size:21px;line-height:1.32;letter-spacing:.03em;max-width:42ch;border-left:2px solid var(--lime);padding-left:18px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(40px,5vw,70px)}
+.why article{background:rgba(8,8,8,.72);border:1px solid var(--line);padding:24px 22px 26px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color .3s,transform .4s var(--ease)}
+.why article:hover{border-color:var(--lime);transform:translateY(-4px)}
+.why b{font-family:var(--display);font-weight:400;color:var(--lime);font-size:20px;letter-spacing:.08em}
+.why h3{font-family:var(--display);font-weight:400;font-size:clamp(30px,2.6vw,40px);line-height:.95;margin:10px 0 12px}
+.why p{color:var(--fg-80);font-size:19px;line-height:1.3}
+.events{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:34px}
+.events .ui-label{color:var(--lime);font-size:15px}
+.events ul{list-style:none;display:flex;gap:10px;flex-wrap:wrap}
+.events li{font-family:var(--display);font-size:20px;letter-spacing:.05em;border:1px solid var(--line);padding:8px 14px 6px;background:rgba(8,8,8,.6)}
+.book{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;margin-top:clamp(40px,5vw,70px);padding:clamp(24px,3vw,40px);border:1px solid var(--lime);background:rgba(8,8,8,.8)}
+.book h3{font-family:var(--display);font-weight:400;font-size:clamp(44px,5vw,72px);line-height:.88}
+.book p{color:var(--fg-80);max-width:44ch;margin-top:10px}
+.book .btn{height:52px;font-size:22px;padding-left:30px}
+
+/* 07 creed */
+.creed{position:relative;overflow:hidden;isolation:isolate;min-height:min(70vh,620px);display:flex;align-items:flex-end;padding-bottom:70px}
+.creed .bg{position:absolute;inset:0;z-index:-1}
+.creed .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(1) brightness(.55) contrast(1.2)}
+.creed .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(8,8,8,.1) 35%,rgba(255,42,31,.22) 70%,rgba(8,8,8,.9)),linear-gradient(90deg,rgba(8,8,8,.75),transparent 70%);mix-blend-mode:normal}
+.creed .btns{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+
+/* footer */
+footer{position:relative;background:var(--bg);overflow:hidden;padding-bottom:max(20px,env(safe-area-inset-bottom,0px))}
+.fmarq{display:flex;width:max-content;animation:mq 30s linear infinite;padding:16px 0 6px;border-bottom:1px solid var(--line)}
+.fmarq span{font-family:var(--ui);font-weight:700;font-size:clamp(26px,3vw,40px);text-transform:uppercase;padding:0 36px;white-space:nowrap}
+.fmarq span:nth-child(odd){color:var(--lime)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;padding-top:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.fgrid h4{font-family:var(--display);font-weight:400;font-size:clamp(48px,5vw,72px);line-height:.9;margin-bottom:18px}
+.fgrid ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.fgrid li,.fgrid li a{font-family:var(--body);font-weight:300;font-size:30px;letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
+.fgrid li a:hover{color:var(--lime)}
+.fgrid .soc li{display:flex;align-items:center;gap:12px}
+.fgrid .soc svg{width:28px;height:28px;stroke:var(--fg);fill:none;stroke-width:1.6;flex:none}
+.fgrid .soc small{font-size:14px;letter-spacing:.1em;color:var(--mute)}
+.fgrid .loc p{font-family:var(--ui);font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--fg-80)}
+.fgrid .loc p::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lime);margin-right:8px;vertical-align:1px}
+.fgrid .loc .places{font-family:var(--display);font-size:30px;letter-spacing:.06em;line-height:1.05;margin-top:14px;color:var(--fg)}
+.fbig{position:relative;height:clamp(260px,32vw,420px)}
+.ghost{position:absolute;inset:auto 0 30px 0;display:flex;width:max-content;animation:mq 40s linear infinite;font-family:var(--display);font-size:clamp(160px,24vw,330px);line-height:.8;color:#1a1a1a;white-space:nowrap}
+.ghost span{padding:0 40px}
+.ticket{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);width:min(460px,calc(100% - 32px));background:#1b1b1b;border:1px solid #2c2c2c;padding:22px 30px 18px;font-family:var(--ui)}
+.ticket::before,.ticket::after{content:"+";position:absolute;top:8px;color:var(--mute);font-size:14px}
+.ticket::before{left:12px}.ticket::after{right:12px}
+.ticket .t1{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.12em;color:var(--mute)}
+.ticket .t1 b{font-size:13px;letter-spacing:.24em;color:var(--fg)}
+.ticket .t1 i{font-style:normal;border:1px solid #3a3a3a;padding:3px 8px}
+.ticket h5{font-family:var(--ui);font-weight:700;font-size:clamp(28px,3.4vw,34px);line-height:1.02;letter-spacing:-.01em;margin:30px 0 30px;text-transform:uppercase}
+.ticket h5 em{font-style:normal;color:var(--lime)}
+.ticket .t3{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;color:var(--mute);border-top:1px dashed #3a3a3a;padding-top:12px}
+.fbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:16px;font-family:var(--ui);font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.02em}
+
+/* cursor: lime glow trail, like the original */
+.cur{position:fixed;inset:0;pointer-events:none;z-index:999;display:none}
+.cur i{position:absolute;left:0;top:0;border-radius:50%;background:radial-gradient(circle,var(--lime) 0%,rgba(255,42,31,0) 72%);will-change:transform}
+.cur .orbit{position:absolute;left:0;top:0;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:1.5px dashed var(--lime);opacity:0;transform:scale(.4);transition:opacity .25s,transform .35s var(--ease)}
+.cur .orbit span{display:block;width:100%;height:100%;border-radius:50%;animation:spin 2.2s linear infinite}
+.cur .orbit span::before{content:"";position:absolute;top:-4px;left:50%;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+.cur.hot .orbit{opacity:1;transform:scale(1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .has-cur,.has-cur *{cursor:none!important}
+  .has-cur .cur{display:block}
+}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(8,8,8,.94);display:grid;place-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) 16px calc(20px + env(safe-area-inset-bottom,0px));opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+.lb.open{opacity:1;pointer-events:auto}
+.lb img{max-height:86vh;max-width:min(92vw,900px);width:auto;object-fit:contain;transform:scale(.96);transition:transform .45s var(--ease)}
+.lb.open img{transform:none}
+.lb .x{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));width:46px;height:46px;border:1px solid var(--line);font-family:var(--display);font-size:22px;background:var(--bg)}
+.lb p{font-family:var(--display);font-size:22px;letter-spacing:.06em;color:var(--lime);margin-top:12px;text-align:center}
+
+/* text system: one intro style, one body style, one column grid */
+:root{--measure:34ch;--body-measure:46ch}
+.lede,.bio .lede,.day-txt .lede,.about .lede,.studio-txt .lede,.hero-sub .lede{font-family:var(--body);font-weight:300;font-size:clamp(22px,2vw,28px);line-height:1.16;letter-spacing:.04em;color:var(--fg-80);max-width:var(--measure)}
+.bio .lede{color:var(--fg)}
+.day-txt .lede,.about .lede{margin-top:18px}
+.bio p:not(.lede):not(.seal),.pitch-sub,.reel-note p,.award-txt p:not(.big),.cf-txt p:not(.meta),.book p,.pcard p,.why p,.bio .seal{font-family:var(--body);font-weight:300;font-size:20px;line-height:1.4;letter-spacing:.03em;color:var(--fg-80);max-width:var(--body-measure)}
+.why p{max-width:none}
+.bio .seal{color:var(--fg)}
+.bio p + p{margin-top:14px}
+.head,.studio-txt,.about-grid,.pitch{grid-template-columns:minmax(0,1fr) minmax(0,clamp(300px,32vw,460px));gap:40px;align-items:end}
+.about-grid .rules{justify-self:start}
+.h-xl{font-size:clamp(60px,8.8vw,130px)}
+.pitch{align-items:start}
+.head .side,.studio-txt > div:last-child{padding-bottom:10px}
+.pitch-lead{font-size:clamp(24px,2.4vw,34px);line-height:1.12;max-width:30ch}
+.cf-txt .meta,.pcard .meta{max-width:var(--body-measure)}
+.why article{display:flex;flex-direction:column}
+@media (min-width:1101px){.why h3{min-height:2em;display:flex;align-items:flex-end}}
+
+/* responsive */
+@media (max-width:1100px){
+  .links{display:none}
+  .burger{display:block}
+  .manifesto{grid-template-columns:1fr 1fr}
+  .manifesto .portrait{grid-row:span 2}
+  .reels{grid-template-columns:1fr 1fr 1fr}
+  .reel-note{grid-template-columns:1fr 1fr}
+  .reel-note .btn{grid-column:1/-1;justify-self:start}
+  .awards{grid-template-columns:1fr 1fr}
+  .award-card{grid-column:1/-1;flex-direction:row}
+  .award-card .aw.vid{width:42%;flex:none}
+  .why{grid-template-columns:1fr 1fr}
+  .day{grid-template-columns:1fr 1fr}
+  .cf{grid-template-columns:1fr}
+  .cf-stage{height:clamp(440px,70vw,600px)}
+  .studio{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--gx:max(16px,env(safe-area-inset-left,0px));--gxr:max(16px,env(safe-area-inset-right,0px))}
+  body{font-size:19px}
+  .nav-r .btn{display:none}
+  .logo{font-size:17px;letter-spacing:.32em}
+  .sound .sep,.sound .time{display:none}
+  .sound{padding:0 12px}
+  .head,.manifesto,.about-grid{grid-template-columns:1fr}
+  .head{gap:18px}
+  .manifesto .portrait{grid-row:auto;order:-1}
+  .sig{flex-direction:column;align-items:flex-start}
+  .type{text-align:left}
+  .hero-foot{grid-template-columns:1fr}
+  .next{text-align:left}
+  .wave{display:none}
+  .reels{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(-1*var(--gx));margin-right:calc(-1*var(--gxr));padding:10px 11%;scrollbar-width:none;perspective:900px}
+  .reels::-webkit-scrollbar{display:none}
+  .reels .reel,.reels .reel.act{flex:0 0 78%;aspect-ratio:3/4;height:auto;scroll-snap-align:center;filter:none}
+  .reels .reel:not(.act) h3{font-size:40px}
+  .reel-dots{display:flex}
+  .gi{width:62vw}
+  .cmp-tag{font-size:15px}
+  .cmp-tag.r{top:auto;bottom:14px}
+  .studio-txt{grid-template-columns:1fr;gap:16px}
+  .cmp{aspect-ratio:1/1;max-height:none;width:auto;margin-left:calc(-1*var(--gx));margin-right:calc(-1*var(--gxr));border-left:0;border-right:0}
+  .cmp img{object-position:50% 55%}
+  .cmp-knob{width:64px;height:64px;margin:-32px 0 0 -32px}
+  .cmp-line{width:3px;margin-left:-1.5px}
+  .pcard{position:relative;top:auto;grid-template-columns:1fr;height:auto;min-height:0}
+  .pcard .poster{order:-1;padding:12px 12px 0;height:auto}
+  .pcard .poster button{height:auto;width:100%;max-width:100%;aspect-ratio:auto}
+  .pcard .poster img{height:auto}
+  .pcard .info{gap:14px}
+  .reel-note{grid-template-columns:1fr}
+  .pcard .info{padding:16px 18px 22px}
+  .pcard p{display:none}
+  .awards{grid-template-columns:1fr}
+  .cf-card{width:68%}
+  .cf-stage{height:118vw;max-height:560px}
+  .daywrap{grid-template-columns:1fr}
+  .deck{width:min(330px,82vw)}
+  .swipe-hint{display:flex}
+  .day{grid-template-columns:1fr 1fr;gap:10px}
+  .day .reel{grid-column:1/-1}
+  .studio{gap:10px}
+  .award-card{flex-direction:column}
+  .award-card .aw.vid{width:100%}
+  .strip{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+  .panel{flex:0 0 72%;aspect-ratio:3/4;scroll-snap-align:start}
+  .panel:hover,.panel:focus-visible{flex:0 0 72%}
+  .panel img{filter:none}
+  .panel .t{opacity:1;transform:none}
+  .rules{justify-self:start}
+  .stats{grid-template-columns:1fr}
+  .pitch,.why{grid-template-columns:1fr}
+  .book .btn{width:100%}
+  .stat + .stat{border-left:0;border-top:1px solid var(--line)}
+  .fgrid{grid-template-columns:1fr}
+  .fbar{flex-direction:column;align-items:flex-start;gap:6px}
+  .fbig{height:300px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
+  .hero h1 .ch{transform:none}
+  .js [data-reveal].pre{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
 <header class="nav">
-  <a href="#" class="logo">RI<b>U</b>K</a>
-  <a href="#booking" class="btn">Contratar →</a>
-</header>
-
-<section class="hero">
-  <div class="grid-bg"></div>
-  <div class="wave" id="wave"></div>
-  <span class="mono" style="color:var(--mute);margin-bottom:10px">Live techno · Hard techno · Valencia</span>
-  <h1>RIU<span>K</span></h1>
-  <div class="hero-row">
-    <div class="tag"><span class="chip">LIVE</span><p>Techno underground, directo y sin frenos. De Underland a una secret location de 12 horas.</p></div>
-    <div class="next"><span class="mono">Última fecha</span><strong>HARD EXPRESSION · SECRET LOCATION</strong></div>
+  <a href="#top" class="logo" aria-label="Riuk, inicio">Riuk</a>
+  <nav class="links ui-label" aria-label="Principal">
+    <a href="#sonido">Su sonido</a><a href="#carteles">Carteles</a><a href="#cabinas">Cabinas</a><a href="#underland">Underland</a><a href="#raices">Raíces</a><a href="#galeria">Galería</a>
+  </nav>
+  <div class="nav-r">
+    <a class="btn btn-gray" href="https://ig.me/m/rslriuk" target="_blank" rel="noopener">Contratar <span class="ar"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span></a>
+    <button class="sound" id="sound" aria-pressed="false" aria-label="Escuchar Caipirinha, de Riuk y Seon">
+      <span class="led"></span><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="lbl">SONIDO OFF</span><span class="sep"></span><span class="time" id="time">00:00</span>
+    </button>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
   </div>
-</section>
+</header>
+<div class="menu" id="menu">
+  <a class="big" href="#sonido">Su sonido</a><a class="big" href="#carteles">Carteles</a><a class="big" href="#cabinas">Cabinas</a><a class="big" href="#underland">Underland</a><a class="big" href="#raices">Raíces</a><a class="big" href="#galeria">Galería</a><a class="big" href="#sobre">Sobre</a>
+  <a class="btn" style="margin-top:24px;align-self:flex-start" href="https://ig.me/m/rslriuk" target="_blank" rel="noopener">Contratar <span class="ar"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span></a>
+</div>
 
-<section class="sec" id="sobre">
-  <div class="wrap about">
-    <div class="reveal">
-      <div class="head"><span class="mono num">01</span><span class="mono">Quién es</span></div>
-      <h2>Techno de <em>barrio</em>,<br>energía de <em>rave</em>.</h2>
-      <p class="lead">Riuk lleva años moviendo la escena underground de Valencia: habitual de Underland (Massanassa), de Hard Expression, On Air y las noches de Komando Tecno.</p>
+<iframe id="sc" title="Reproductor de SoundCloud" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/riuk-schranz/riuk-seon-caipirinha&amp;auto_play=false&amp;visual=false&amp;show_comments=false" style="position:fixed;left:-9999px;top:0;width:300px;height:166px;border:0" tabindex="-1" aria-hidden="true"></iframe>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-vid"><img src="media/cabina-roja.webp" alt="" fetchpriority="high"></div>
+    <div class="wrap">
+      <h1 aria-label="Riuk"><span class="row" data-split>DJ</span><span class="row" data-split>RIUK</span></h1>
+      <div class="hero-sub"><span class="tag">TECHNO</span><p class="lede">Hardtechno y schranz desde la escena underground de València. Entra, sube el volumen y no mires el reloj.</p></div>
     </div>
-    <div class="reveal">
-      <p>Su terreno es el techno y el hard techno, en directo. Comparte cabina con la familia de siempre —Manu Kane, Dark Sánchez, Jota de Copas, Sata— y cuando sube a la cabina la pista ya sabe lo que viene.</p>
-      <figure class="ph"><img src="img/vinilo.jpg" alt="Riuk pinchando a vinilo" loading="lazy"><figcaption class="mono">Raíces · a vinilo</figcaption></figure>
-      <div class="seal"><div class="mono">Su sello</div><p style="margin:0">Live techno con pegada, de los que empiezan a las 23:45 y no paran hasta el cierre.</p></div>
-      <div class="stats" style="margin-top:34px">
-        <div class="stat"><b>12<span>h</span></b><span class="mono">Secret location</span></div>
-        <div class="stat"><b>10<span>+</span></b><span class="mono">Carteles 23–26</span></div>
-        <div class="stat"><b>LI<span>VE</span></b><span class="mono">Formato</span></div>
-        <div class="stat"><b>VLC</b><span class="mono">Base</span></div>
+    <div class="wrap hero-foot">
+      <div class="listen">
+        <button class="playbtn" id="play" aria-label="Escuchar Caipirinha, de Riuk y Seon"><svg viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg></button>
+        <div>
+          <small id="nowT">Escucha: Riuk &amp; Seon · Caipirinha</small>
+          <svg class="wave" viewBox="0 0 340 34" preserveAspectRatio="none" aria-hidden="true"><path id="wave" d="M0 17 L340 17"/></svg>
+        </div>
+      </div>
+      <div class="next"><small>ÚLTIMA FECHA</small>HARD EXPRESSION<br>15 MARZO · 12 HORAS<br>SECRET LOCATION<br>9:00 — 21:00</div>
+    </div>
+  </section>
+
+  <div class="marq" aria-hidden="true"><div class="trk">
+    <span>Riuk</span><span>Hardtechno</span><span>Schranz</span><span>Underland</span><span>Musitek</span><span>Hard Expression</span><span>Komando Tecno</span><span>València</span>
+    <span>Riuk</span><span>Hardtechno</span><span>Schranz</span><span>Underland</span><span>Musitek</span><span>Hard Expression</span><span>Komando Tecno</span><span>València</span>
+  </div></div>
+
+  <!-- 01 QUIÉN ES -->
+  <section class="sec wrap" id="sobre">
+    <p class="eyebrow" data-reveal><b>01</b> Quién es</p>
+    <div class="manifesto">
+      <h2 class="h-xl" data-reveal>Criado<br>en la rave,<br>curtido en<br><span style="white-space:nowrap">la cabina<span class="dot"></span></span></h2>
+      <div class="bio" data-reveal>
+        <p class="lede">Alex Belenguer, Riuk en la cabina, lleva más de quince años haciendo temblar la escena underground de València.</p>
+        <p>Con 19 años se compró su primer equipo y se propuso aprender a pinchar. Poco después ya sonaba en fiestas rave de techno, hardtechno y schranz, y trabajaba con colectivos como Musitek, Komakino, A.P.A. o Arderground València.</p>
+        <p>Ha pinchado en Chocolate (hoy Qoqoa), Mogambo, Ágora Live, Simbiosi o Killing Time, ha compartido cabina con Montek, Miss Draizer, A.Professor, Punto o Seon, y su nombre ha salido en el mismo cartel que Skrillex y Nick Thayer.</p>
+        <p class="seal"><span>Su sello</span>Bombo duro, ritmo que no afloja y una pista que a las siete de la mañana sigue pidiendo más.</p>
+      </div>
+      <figure class="portrait" data-reveal><img src="media/vinilo.webp" alt="Riuk pinchando a vinilo con auriculares rojos" style="object-position:62% 30%"></figure>
+    </div>
+    <div class="sig" data-reveal>
+      <p class="mini">ESTE ES <span class="lime">RIUK</span>.</p>
+      <p class="type" aria-label="Hecho en la rave. Afinado en València.">HECHO EN LA RAVE.<br>AFINADO EN VALÈNCIA.</p>
+    </div>
+  </section>
+
+  <!-- 02 SU SONIDO -->
+  <section class="sec wrap" id="sonido">
+    <div class="head">
+      <div data-reveal>
+        <p class="eyebrow"><b>02</b> Su sonido</p>
+        <h2 class="h-xl">Dale<br>al play<span class="dot"></span></h2>
+      </div>
+      <div class="side" data-reveal>
+        <p class="lede">Sus producciones y sesiones, aquí mismo. Toca el botón de cada tema para escucharlo.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="sec" id="live">
-  <div class="wrap">
-    <div class="head reveal"><span class="mono num">02</span><span class="mono">En directo</span></div>
-    <h2 class="reveal">Dale al <em>play</em>.</h2>
-    <p class="lead reveal">Sus lives, listos para que un promotor los escuche en segundos.</p>
-    <div class="live" style="margin-top:40px">
-      <div class="track reveal"><div class="top mono"><span>Live 01</span><span>Hard techno</span></div><h3>Hard Expression<br>Secret Location</h3><div class="bars"></div><div class="play"><svg viewBox="0 0 16 16"><path d="M3 1l12 7-12 7z"/></svg></div></div>
-      <div class="track reveal"><div class="top mono"><span>Live 02</span><span>Techno</span></div><h3>Underland<br>Massanassa</h3><div class="bars"></div><div class="play"><svg viewBox="0 0 16 16"><path d="M3 1l12 7-12 7z"/></svg></div></div>
-      <div class="track reveal"><div class="top mono"><span>Live 03</span><span>Studio</span></div><h3>Mode ON<br>Home session</h3><div class="bars"></div><div class="play"><svg viewBox="0 0 16 16"><path d="M3 1l12 7-12 7z"/></svg></div></div>
+    <div class="reels" id="reels">
+      <article class="reel" data-reveal data-track="https://soundcloud.com/riuk-schranz/riuk-seon-caipirinha" data-name="Riuk &amp; Seon · Caipirinha">
+        <img src="media/cabina-underland.webp" alt="Riuk en la cabina de Underland" style="object-position:30% 40%">
+        <div class="cap"><div><span class="ui-label">Fat Bass Records 001</span><h3>Caipirinha</h3><p class="by">Riuk &amp; Seon</p></div>
+          <button class="mute" aria-label="Reproducir Caipirinha" aria-pressed="false"><svg class="off" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="on" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button></div>
+      </article>
+      <article class="reel" data-reveal data-track="https://soundcloud.com/riuk-schranz/seon-vs-riuk-rata-muerta" data-name="Seon vs Riuk · Rata Muerta">
+        <img src="media/cabina-aire-libre.webp" alt="Riuk pinchando al aire libre, en blanco y negro" style="object-position:48% 40%">
+        <div class="cap"><div><span class="ui-label">Producción</span><h3>Rata Muerta</h3><p class="by">Seon vs Riuk</p></div>
+          <button class="mute" aria-label="Reproducir Rata Muerta" aria-pressed="false"><svg class="off" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="on" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button></div>
+      </article>
+      <article class="reel" data-reveal data-track="https://soundcloud.com/riuk-schranz/sesi-n-nonombreak-bday-dj-riuk" data-name="Dj Riuk · Sesión Nonombreak">
+        <img src="media/cabina-roja.webp" alt="Riuk en la cabina con luz roja" style="object-position:62% 30%">
+        <div class="cap"><div><span class="ui-label">Sesión schranz</span><h3>Nonombreak</h3><p class="by">Dj Riuk</p></div>
+          <button class="mute" aria-label="Reproducir la sesión Nonombreak" aria-pressed="false"><svg class="off" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="on" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button></div>
+      </article>
     </div>
-    <p class="note">Borrador: aquí irían sus sets reales (SoundCloud, vídeos de cabina o Mixcloud).</p>
-  </div>
-</section>
+    <div class="reel-dots" id="reelDots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    <aside class="reel-note" data-reveal>
+        <p>Techno con pegada, sin relleno. Del hardtechno al schranz, pensado para la pista y no para el sofá.</p>
+        <dl class="specs">
+          <dt>Estilo</dt><dd>Techno · Hardtechno · Schranz</dd>
+          <dt>Colectivo</dt><dd>Musitek</dd>
+          <dt>Casa</dt><dd>Underland</dd>
+          <dt>Sello</dt><dd>Fat Bass Records</dd>
+        </dl>
+        <a class="btn" href="https://soundcloud.com/riuk-schranz" target="_blank" rel="noopener">Más en SoundCloud <span class="ar"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span></a>
+    </aside>
+  </section>
 
-<section class="sec" id="fechas">
-  <div class="wrap">
-    <div class="head reveal"><span class="mono num">03</span><span class="mono">Fechas</span></div>
-    <h2 class="reveal">Donde ha <em>sonado</em>.</h2>
-    <div class="dates" style="margin-top:40px">
-      <div class="date reveal"><div class="d">15 MAR 26<small>9:00 – 21:00</small></div><div class="ev"><h3>Hard Expression · 12 horas</h3><p>Con Manu Kane, Sata, Falsojudas, Punto, Industrial Waves, Davit Error, Mauro Silva…</p></div><div class="mono venue">Secret location</div></div>
-      <div class="date reveal"><div class="d">27 SEP 24<small>23:45 – 7:30</small></div><div class="ev"><h3>Komando Tecno</h3><p>Con Jota de Copas, Dark Sánchez, Sata, Raspa, Kelo</p></div><div class="mono venue">Underland · Massanassa</div></div>
-      <div class="date reveal"><div class="d">19 JUL 24<small>Aniversario</small></div><div class="ev"><h3>Tekniversario</h3><p>Con Dharma, Sarakaos, Fiera, Oxidose, Manu Kane, Falkon…</p></div><div class="mono venue">Underland · Massanassa</div></div>
-      <div class="date reveal"><div class="d">20 ABR 24<small>Hardtechno &amp; bakalao</small></div><div class="ev"><h3>Maaacarena</h3><p>Con Sata, Dark Sánchez, Manuelotek, Falso Judas, Raspa</p></div><div class="mono venue">Valencia</div></div>
-      <div class="date reveal"><div class="d">07 MAR 24<small>23:00 – cierre</small></div><div class="ev"><h3>Toka Tecno</h3><p>Riuk y Dark Sánchez · Funky Food x Underland · entrada gratuita</p></div><div class="mono venue">Funky Food · Calixt III, Extramurs</div></div>
-      <div class="date reveal"><div class="d">29 FEB 24<small>22:30</small></div><div class="ev"><h3>Hard Expression · Techno &amp; Hard Techno</h3><p>Con Manu Kane y Seon</p></div><div class="mono venue">On Air · C/ E. Navarro 8</div></div>
-      <div class="date reveal"><div class="d">26 ENE 24<small>00:30 – 07:30</small></div><div class="ev"><h3>Cumple Riuk</h3><p>Underground techno music con Manu Kane, Jorge Carreras, Dark Sánchez, Jota de Copas</p></div><div class="mono venue">Underland · Massanassa</div></div>
-      <div class="date reveal"><div class="d">22 JUL 23<small>Acid Resistance</small></div><div class="ev"><h3>Tekniversario · Geezer</h3><p>Con Zyco, Sareta Ege, Ferrerón &amp; Amat R, Void, Kelo…</p></div><div class="mono venue">Underland · Massanassa</div></div>
+  <!-- 03 CARTELES -->
+  <section class="sec wrap" id="carteles">
+    <div class="head">
+      <div data-reveal>
+        <p class="eyebrow"><b>03</b> Carteles</p>
+        <h2 class="h-xl">Noches con<br>su nombre<span class="dot"></span></h2>
+      </div>
+      <div class="side" data-reveal>
+        <p class="lede">Nueve noches, en sus carteles originales. Arrastra para pasar de uno a otro.</p>
+      </div>
+    </div>
+    <div class="cf" id="cf">
+      <div class="cf-ghost" aria-hidden="true"><span>CARTELES · NOCHES · CARTELES · NOCHES · </span><span>CARTELES · NOCHES · CARTELES · NOCHES · </span></div>
+      <div class="cf-stage" id="cfStage" tabindex="0" aria-roledescription="carrusel" aria-label="Carteles. Usa las flechas para cambiar.">
+        <figure class="cf-card"><img src="media/cartel-hard-expression-12h.webp" alt="Cartel de Hard Expression, secret location, 15 de marzo" draggable="false"><span class="glare"></span></figure>
+        <figure class="cf-card"><img src="media/cartel-komando-sep24.webp" alt="Cartel de Komando Tecno, 27 de septiembre de 2024 en Underland" draggable="false"><span class="glare"></span></figure>
+        <figure class="cf-card"><img src="media/cartel-tekniversario-24.webp" alt="Cartel del Tekniversario, 19 de julio de 2024" draggable="false"><span class="glare"></span></figure>
+        <figure class="cf-card"><img src="media/cartel-maaacarena.webp" alt="Cartel de Maaacarena, hardtechno y bakalao, 20 de abril de 2024" draggable="false"><span class="glare"></span></figure>
+        <figure class="cf-card"><img src="media/cartel-toka-tecno.webp" alt="Cartel de Toka Tecno en Funky Food, 7 de marzo de 2024" draggable="false"><span class="glare"></span></figure>
+        <figure class="cf-card"><img src="media/cartel-hard-expression-onair.webp" alt="Cartel de Hard Expression en On Air, 29 de febrero" draggable="false"><span class="glare"></span></figure>
+        <figure class="cf-card"><img src="media/cartel-cumple-riuk.webp" alt="Cartel del cumpleaños de Riuk en Underland, 26 de enero de 2024" draggable="false"><span class="glare"></span></figure>
+        <figure class="cf-card"><img src="media/cartel-komando-nochebuena.webp" alt="Cartel de Komando Tecno especial Nochebuena 2023" draggable="false"><span class="glare"></span></figure>
+        <figure class="cf-card"><img src="media/cartel-tekniversario-23.webp" alt="Cartel del Tekniversario con Geezer, 22 de julio de 2023" draggable="false"><span class="glare"></span></figure>
+      </div>
+      <div class="cf-info">
+        <div class="cf-txt" id="cfTxt" aria-live="polite">
+          <span class="chip">ARCHIVO · <b id="cfNum">01</b> / 09</span>
+          <h3 id="cfTitle">Hard Expression</h3>
+          <p class="meta" id="cfMeta">SECRET LOCATION<br>15 DE MARZO · DE 9:00 A 21:00</p>
+          <p id="cfText">Doce horas de hardtechno con Manu Kane, Sata, Falsojudas, Punto, Davit Error, Mauro Silva y Riuk.</p>
+        </div>
+        <div class="cf-ctrl">
+          <button class="cf-btn" id="cfPrev" aria-label="Cartel anterior"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M11 6H1M5 2L1 6l4 4"/></svg></button>
+          <div class="cf-bar"><i id="cfBar"></i></div>
+          <button class="cf-btn" id="cfNext" aria-label="Cartel siguiente"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></button>
+        </div>
+        <button class="btn btn-gray" id="cfOpen">Ver cartel en grande <span class="ar"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 CABINAS -->
+  <section class="sec wrap" id="cabinas">
+    <div class="head">
+      <div data-reveal>
+        <p class="eyebrow"><b>04</b> Cabinas</p>
+        <h2 class="h-xl">Quince años<br>de cabina<span class="dot"></span></h2>
+      </div>
+      <div class="side" data-reveal>
+        <p class="lede">De las raves underground a los clubs de València, y en cartel junto a Skrillex y Nick Thayer.</p>
+      </div>
+    </div>
+    <div class="awards">
+      <figure class="aw tall" data-reveal>
+        <button data-lb="media/cabina-underland.webp" data-cap="En la cabina de Underland" aria-label="Ampliar la foto de Riuk en Underland" style="display:block;width:100%;height:100%"><img src="media/cabina-underland.webp" alt="Riuk pinchando en Underland con visuales detrás" style="object-position:35% 50%"></button>
+        <figcaption class="cap"><span class="num">UNDERLAND</span></figcaption>
+      </figure>
+      <figure class="aw tall" data-reveal>
+        <button data-lb="media/cabina-aire-libre.webp" data-cap="Al aire libre" aria-label="Ampliar la foto de Riuk al aire libre" style="display:block;width:100%;height:100%"><img src="media/cabina-aire-libre.webp" alt="Riuk pinchando al aire libre con dos Pioneer" style="object-position:55% 50%"></button>
+        <figcaption class="cap"><span class="num">AL AIRE LIBRE</span></figcaption>
+      </figure>
+      <div class="award-card">
+        <div class="award-txt" data-reveal>
+          <span class="ui-label">En el mismo cartel que</span>
+          <p class="big">Skrillex<br>y Nick<br>Thayer<span class="dot"></span></p>
+          <p>Y en cabina con Montek, Miss Draizer, A.Professor, Guillemotik, Txuki, Punto, Seon, Felo, Pino López y Soak.</p>
+        </div>
+        <figure class="aw vid" data-reveal>
+          <button data-lb="media/la-familia.webp" data-cap="La familia del techno" aria-label="Ampliar la foto de Riuk con su gente" style="position:absolute;inset:0"><img src="media/la-familia.webp" alt="Riuk haciéndose un selfie con otros DJs de la escena" style="object-position:50% 45%"></button>
+          <figcaption class="cap"><span class="num">LA FAMILIA</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 UNDERLAND -->
+  <section class="sec wrap" id="underland">
+    <div class="daywrap">
+      <div class="day-txt" data-reveal>
+        <p class="eyebrow"><b>05</b> Su casa</p>
+        <h2 class="h-xl">Underland,<br>Massanassa<span class="dot"></span></h2>
+        <p class="lede">Komando Tecno, el Tekniversario, su propio cumpleaños: en Underland la noche empieza a las doce y acaba con luz de día.</p>
+        <div class="deck-ctrl">
+          <button class="cf-btn" id="dkPrev" aria-label="Carta anterior"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M11 6H1M5 2L1 6l4 4"/></svg></button>
+          <span class="dk-count"><b id="dkNum">01</b> / 04</span>
+          <button class="cf-btn" id="dkNext" aria-label="Carta siguiente"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></button>
+        </div>
+        <p class="swipe-hint"><span>←</span> Desliza la carta <span>→</span></p>
+      </div>
+      <div class="deck" id="deck" aria-label="Carteles de Underland. Desliza para pasar.">
+        <figure class="dk" data-src="media/cartel-cumple-riuk.webp" data-cap="Cumple Riuk · 26.01.24"><img src="media/cartel-cumple-riuk.webp" alt="Cartel del cumpleaños de Riuk en Underland" draggable="false"><figcaption class="cap"><span class="num">CUMPLE RIUK</span></figcaption></figure>
+        <figure class="dk" data-src="media/cartel-komando-sep24.webp" data-cap="Komando Tecno · 27.09.24"><img src="media/cartel-komando-sep24.webp" alt="Cartel de Komando Tecno de septiembre de 2024" draggable="false"><figcaption class="cap"><span class="num">KOMANDO TECNO</span></figcaption></figure>
+        <figure class="dk" data-src="media/cartel-tekniversario-23.webp" data-cap="Tekniversario · 22.07.23"><img src="media/cartel-tekniversario-23.webp" alt="Cartel del Tekniversario de 2023" draggable="false"><figcaption class="cap"><span class="num">TEKNIVERSARIO</span></figcaption></figure>
+        <figure class="dk" data-src="media/cartel-komando-nochebuena.webp" data-cap="Komando Tecno · Nochebuena"><img src="media/cartel-komando-nochebuena.webp" alt="Cartel de Komando Tecno especial Nochebuena" draggable="false"><figcaption class="cap"><span class="num">NOCHEBUENA</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 RAÍCES -->
+  <section class="sec wrap" id="raices">
+    <div class="studio">
+      <div class="studio-txt" data-reveal>
+        <div><p class="eyebrow"><b>06</b> Raíces</p>
+        <h2 class="h-xl">Del vinilo<br>al directo<span class="dot"></span></h2></div>
+        <div><p class="lede">Empezó con platos, vinilos y un portátil. Hoy, CDJ y la misma hambre de pista.</p>
+        <p class="swipe-hint"><span>←</span> Arrastra la línea roja <span>→</span></p></div>
+      </div>
+      <div class="cmp" id="cmp" data-reveal role="slider" tabindex="0" aria-label="Compara las dos fotos de Riuk, antes y ahora" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <img src="media/vinilo.webp" alt="Riuk en sus inicios pinchando a vinilo" draggable="false">
+        <div class="cmp-b"><img src="media/cabina-roja.webp" alt="Riuk hoy en la cabina con luz roja" draggable="false"></div>
+        <span class="cmp-tag l">LOS INICIOS</span><span class="cmp-tag r">HOY</span>
+        <div class="cmp-line"><span class="cmp-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 GALERÍA -->
+  <section class="sec wrap" id="galeria">
+    <div class="head">
+      <div data-reveal>
+        <p class="eyebrow"><b>07</b> Archivo visual</p>
+        <h2 class="h-xl">Lo que pasa<br>en la noche<span class="dot"></span></h2>
+      </div>
+      <div class="side" data-reveal>
+        <p class="lede">Cabinas, carteles y la gente de siempre.</p>
+      </div>
+    </div>
+    <div class="gal" id="gal" data-reveal aria-label="Galería de fotos. Arrastra para moverla.">
+      <div class="gal-track" id="galTrack"><figure class="gi" data-src="media/cabina-roja.webp" data-cap="En rojo"><img src="media/cabina-roja.webp" alt="En rojo" draggable="false"><figcaption><b>01</b> EN ROJO</figcaption></figure><figure class="gi" data-src="media/cartel-hard-expression-12h.webp" data-cap="Hard Expression"><img src="media/cartel-hard-expression-12h.webp" alt="Hard Expression" draggable="false"><figcaption><b>02</b> HARD EXPRESSION</figcaption></figure><figure class="gi" data-src="media/cabina-underland.webp" data-cap="Underland"><img src="media/cabina-underland.webp" alt="Underland" draggable="false"><figcaption><b>03</b> UNDERLAND</figcaption></figure><figure class="gi" data-src="media/la-familia.webp" data-cap="La familia"><img src="media/la-familia.webp" alt="La familia" draggable="false"><figcaption><b>04</b> LA FAMILIA</figcaption></figure><figure class="gi" data-src="media/cartel-maaacarena.webp" data-cap="Maaacarena"><img src="media/cartel-maaacarena.webp" alt="Maaacarena" draggable="false"><figcaption><b>05</b> MAAACARENA</figcaption></figure><figure class="gi" data-src="media/cabina-aire-libre.webp" data-cap="Al aire libre"><img src="media/cabina-aire-libre.webp" alt="Al aire libre" draggable="false"><figcaption><b>06</b> AL AIRE LIBRE</figcaption></figure><figure class="gi" data-src="media/cartel-toka-tecno.webp" data-cap="Toka Tecno"><img src="media/cartel-toka-tecno.webp" alt="Toka Tecno" draggable="false"><figcaption><b>07</b> TOKA TECNO</figcaption></figure><figure class="gi" data-src="media/vinilo.webp" data-cap="A vinilo"><img src="media/vinilo.webp" alt="A vinilo" draggable="false"><figcaption><b>08</b> A VINILO</figcaption></figure><figure class="gi" aria-hidden="true" data-src="media/cabina-roja.webp" data-cap="En rojo"><img src="media/cabina-roja.webp" alt="En rojo" draggable="false"><figcaption><b>01</b> EN ROJO</figcaption></figure><figure class="gi" aria-hidden="true" data-src="media/cartel-hard-expression-12h.webp" data-cap="Hard Expression"><img src="media/cartel-hard-expression-12h.webp" alt="Hard Expression" draggable="false"><figcaption><b>02</b> HARD EXPRESSION</figcaption></figure><figure class="gi" aria-hidden="true" data-src="media/cabina-underland.webp" data-cap="Underland"><img src="media/cabina-underland.webp" alt="Underland" draggable="false"><figcaption><b>03</b> UNDERLAND</figcaption></figure><figure class="gi" aria-hidden="true" data-src="media/la-familia.webp" data-cap="La familia"><img src="media/la-familia.webp" alt="La familia" draggable="false"><figcaption><b>04</b> LA FAMILIA</figcaption></figure><figure class="gi" aria-hidden="true" data-src="media/cartel-maaacarena.webp" data-cap="Maaacarena"><img src="media/cartel-maaacarena.webp" alt="Maaacarena" draggable="false"><figcaption><b>05</b> MAAACARENA</figcaption></figure><figure class="gi" aria-hidden="true" data-src="media/cabina-aire-libre.webp" data-cap="Al aire libre"><img src="media/cabina-aire-libre.webp" alt="Al aire libre" draggable="false"><figcaption><b>06</b> AL AIRE LIBRE</figcaption></figure><figure class="gi" aria-hidden="true" data-src="media/cartel-toka-tecno.webp" data-cap="Toka Tecno"><img src="media/cartel-toka-tecno.webp" alt="Toka Tecno" draggable="false"><figcaption><b>07</b> TOKA TECNO</figcaption></figure><figure class="gi" aria-hidden="true" data-src="media/vinilo.webp" data-cap="A vinilo"><img src="media/vinilo.webp" alt="A vinilo" draggable="false"><figcaption><b>08</b> A VINILO</figcaption></figure></div>
+    </div>
+    <p class="swipe-hint wrap-hint"><span>←</span> Arrastra la galería o toca una foto <span>→</span></p>
+  </section>
+
+  <!-- 08 SOBRE -->
+  <section class="about" id="booking">
+    <div class="bg"><img src="media/cabina-underland.webp" alt=""></div>
+    <div class="wrap">
+      <div class="about-grid">
+        <div data-reveal>
+          <p class="eyebrow"><b>08</b> Para tu noche</p>
+          <h2 class="h-xl">Este es<br>Riuk<span class="dot"></span></h2>
+          <p class="lede">De la rave al club y del club a la secret location. Donde pincha, la pista no se vacía hasta el cierre.</p>
+        </div>
+        <p class="rules" data-reveal>SIN FRENOS.<br>SIN RELLENO.<br>HASTA EL CIERRE.</p>
+      </div>
+
+      <div class="pitch" data-reveal>
+        <p class="pitch-lead">Riuk no viene a calentar y a irse. Viene a <em>sostener</em> la noche: sabe cuándo apretar, cuándo dejar respirar y cómo llevar una pista de hardtechno de medianoche hasta la mañana.</p>
+        <p class="pitch-sub">Más de quince años en la escena underground de València, miembro de Musitek desde 2011, habitual de Underland, Hard Expression y Komando Tecno, y con producciones propias junto a Seon en Fat Bass Records.</p>
+      </div>
+
+      <div class="why" data-reveal>
+        <article><b>01</b><h3>Hardtechno de verdad</h3><p>Techno, hardtechno y schranz. Nada de medias tintas.</p></article>
+        <article><b>02</b><h3>Sesiones largas</h3><p>Acostumbrado a noches de 23:45 a 7:30 y a fiestas de doce horas.</p></article>
+        <article><b>03</b><h3>Productor</h3><p>Temas propios con Seon y bootlegs que superan las 28.000 escuchas.</p></article>
+        <article><b>04</b><h3>De la escena</h3><p>Conoce a la gente, las salas y los colectivos. Llega, monta y suena.</p></article>
+      </div>
+
+      <div class="events" data-reveal>
+        <span class="ui-label">Para tu evento</span>
+        <ul><li>Clubs y salas</li><li>Raves y secret locations</li><li>Afters</li><li>Fiestas de colectivo</li></ul>
+      </div>
+
+      <div class="stats" data-reveal>
+        <div class="stat"><b>+15</b><span>Años en cabina</span></div>
+        <div class="stat"><b>12H</b><span>Hard Expression</span></div>
+        <div class="stat"><b>28K</b><span>Escuchas en un tema</span></div>
+      </div>
+
+      <div class="book" data-reveal>
+        <div>
+          <h3>¿Tienes fecha?<br><span class="lime">Hablemos.</span></h3>
+          <p>Escríbele con el día, la sala y el tipo de fiesta, y te responde con disponibilidad.</p>
+        </div>
+        <a class="btn" href="https://ig.me/m/rslriuk" target="_blank" rel="noopener">Reservar fecha <span class="ar"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 CREDO -->
+  <section class="creed">
+    <div class="bg"><img src="media/cabina-aire-libre.webp" alt=""></div>
+    <div class="wrap" data-reveal>
+      <p class="eyebrow"><b>09</b> El credo</p>
+      <h2 class="h-xl">El techno<br>no se para<span class="dot"></span></h2>
+      <div class="btns">
+        <a class="btn" href="https://ig.me/m/rslriuk" target="_blank" rel="noopener">Contratar <span class="ar"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span></a>
+        <a class="btn btn-gray" href="#sonido">Escuchar <span class="ar"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M1 6h10M7 2l4 4-4 4"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto">
+  <div class="fmarq" aria-hidden="true">
+    <span>Techno</span><span>Hardtechno</span><span>Schranz</span><span>Underground</span><span>Techno</span><span>Hardtechno</span><span>Schranz</span><span>Underground</span>
+    <span>Techno</span><span>Hardtechno</span><span>Schranz</span><span>Underground</span><span>Techno</span><span>Hardtechno</span><span>Schranz</span><span>Underground</span>
+  </div>
+  <div class="wrap fgrid">
+    <div>
+      <h4>Navegación</h4>
+      <ul><li><a href="#sonido">Su sonido</a></li><li><a href="#carteles">Carteles</a></li><li><a href="#cabinas">Cabinas</a></li><li><a href="#galeria">Galería</a></li><li><a href="#sobre">Sobre</a></li></ul>
+    </div>
+    <div>
+      <h4>Booking</h4>
+      <ul class="soc">
+        <li><a href="https://www.instagram.com/rslriuk/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg>Instagram</a></li>
+        <li><a href="https://soundcloud.com/riuk-schranz" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px"><svg viewBox="0 0 24 24"><path d="M3 15v3M6 12v6M9 10v8M12 8v10M15 6v12h4a3 3 0 0 0 0-6 5 5 0 0 0-4-6"/></svg>SoundCloud</a></li>
+        <li><a href="https://www.facebook.com/DjRiuk" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg>Facebook</a></li>
+        <li><small>Fechas y booking por mensaje directo</small></li>
+      </ul>
+    </div>
+    <div class="loc">
+      <h4>Dónde</h4>
+      <p>Pinchando en</p>
+      <div class="places">UNDERLAND · MASSANASSA<br>ON AIR · EXTRAMURS<br>VALÈNCIA Y ALREDEDORES</div>
     </div>
   </div>
-</section>
-
-<section class="sec" id="carteles">
-  <div class="wrap">
-    <div class="head reveal"><span class="mono num">04</span><span class="mono">Carteles</span></div>
-    <h2 class="reveal">Noches con su <em>nombre</em>.</h2>
-    <p class="lead reveal" style="margin-bottom:34px">Algunas de sus fechas, en sus carteles originales. Desliza para pasar.</p>
-    <div class="posters">
-      <div class="poster img"><img src="img/hard-expression-mar26.jpg" alt="Hard Expression, secret location, 15 de marzo" loading="lazy"></div>
-      <div class="poster img"><img src="img/komando-sep24.jpg" alt="Komando Tecno, 27/09/2024" loading="lazy"></div>
-      <div class="poster img"><img src="img/tekniversario-24.jpg" alt="Tekniversario 2024" loading="lazy"></div>
-      <div class="poster img"><img src="img/maaacarena.jpg" alt="Maaacarena, 20/04/2024" loading="lazy"></div>
-      <div class="poster img"><img src="img/toka-tecno.jpg" alt="Toka Tecno, 07/03/2024" loading="lazy"></div>
-      <div class="poster img"><img src="img/hard-expression-feb.jpg" alt="Hard Expression en On Air, 29/02" loading="lazy"></div>
-      <div class="poster img"><img src="img/cumple-riuk.jpg" alt="Cumple Riuk, 26/01/2024" loading="lazy"></div>
-      <div class="poster img"><img src="img/komando-nochebuena.jpg" alt="Komando Tecno especial Nochebuena" loading="lazy"></div>
-    </div>
-    <p class="mono hint">← Arrastra →</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="head reveal"><span class="mono num">05</span><span class="mono">La familia</span></div>
-    <h2 class="reveal">Cabina <em>compartida</em>.</h2>
-    <div class="crew reveal">
-      <span>Manu Kane</span><span>Dark Sánchez</span><span>Jota de Copas</span><span>Sata</span><span>Falso Judas</span><span>Kelo</span><span>Raspa</span><span>Seon</span><span>Davit Error</span><span>Geezer</span>
+  <div class="fbig">
+    <div class="ghost" aria-hidden="true"><span>DJ RIUK</span><span>DJ RIUK</span><span>DJ RIUK</span><span>DJ RIUK</span></div>
+    <div class="ticket">
+      <div class="t1"><b>DJ RIUK</b><i>PASE · CABINA</i><span>HASTA EL CIERRE</span></div>
+      <h5>Nos vemos<br>en la pista<em>.</em></h5>
+      <div class="t3"><span>VALÈNCIA</span><span>RAVE / 001</span><span>CORTA AQUÍ ✂</span></div>
     </div>
   </div>
-</section>
+  <div class="wrap fbar"><span>Hecho de noche.</span><span>© 2026 Riuk · Diseño Studio Horta</span></div>
+</footer>
 
-<section class="book" id="booking">
-  <div class="wrap">
-    <span class="mono">06 · Booking</span>
-    <h2>¿Lo<br>quieres<br>en tu noche?</h2>
-    <p>Clubs, fiestas, afters y secret locations. Escríbele y te responde él mismo.</p>
-    <div class="ctas">
-      <a class="btn" href="https://ig.me/m/rslriuk" target="_blank" rel="noopener">Escribir por Instagram →</a>
-      <a class="btn ghost" href="https://www.facebook.com/DjRiuk" target="_blank" rel="noopener">Facebook</a>
-    </div>
-  </div>
-</section>
-
-<footer class="mono"><span>© Riuk · Live Techno</span><span>Diseño: Studio Horta</span></footer>
+<div class="cur" id="cur" aria-hidden="true"><div class="orbit"><span></span></div></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <button class="x" id="lbx" aria-label="Cerrar">✕</button>
+  <figure><img id="lbimg" alt=""><p id="lbcap"></p></figure>
+</div>
 
 <script>
-const w=document.getElementById('wave');
-for(let i=0;i<48;i++){const b=document.createElement('i');b.style.animationDelay=(Math.random()*-1.2)+'s';b.style.animationDuration=(0.7+Math.random()*0.9)+'s';w.appendChild(b)}
-document.querySelectorAll('.bars').forEach(el=>{for(let i=0;i<40;i++){const b=document.createElement('i');b.style.height=(20+Math.random()*80)+'%';b.style.animationDelay=(Math.random()*-1)+'s';el.appendChild(b)}});
-document.querySelectorAll('.track').forEach(t=>t.addEventListener('click',()=>{const on=t.classList.contains('on');document.querySelectorAll('.track').forEach(x=>x.classList.remove('on'));if(!on)t.classList.add('on')}));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(() => {
+  document.documentElement.classList.add('js');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // menu
+  const burger = document.getElementById('burger');
+  burger.addEventListener('click', () => {
+    const o = document.body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', o);
+  });
+  document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => {
+    document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', false);
+  }));
+
+  // hero letters
+  let k = 0;
+  document.querySelectorAll('[data-split]').forEach(r => {
+    r.setAttribute('aria-hidden', 'true');
+    r.innerHTML = [...r.textContent].map(c => `<span class="ch" style="--i:${k++}">${c}</span>`).join('');
+  });
+
+  // sound: SoundCloud player (hero button, nav button and track cards share one player)
+  const sound = document.getElementById('sound');
+  const lbl = sound.querySelector('.lbl');
+  const time = document.getElementById('time');
+  const nowT = document.getElementById('nowT');
+  const reels = [];
+  const cards = [...document.querySelectorAll('.reel[data-track]')];
+  const scFrame = document.getElementById('sc');
+  let playing = false, curUrl = cards[0]?.dataset.track, W = null, bound = false;
+  const nameOf = url => (cards.find(c => c.dataset.track === url) || {dataset:{}}).dataset.name || '';
+  const ui = () => {
+    sound.classList.toggle('on', playing);
+    sound.setAttribute('aria-pressed', playing);
+    lbl.textContent = playing ? 'SONIDO ON' : 'SONIDO OFF';
+    nowT.textContent = (playing ? 'Sonando: ' : 'Escucha: ') + nameOf(curUrl);
+    cards.forEach(c => {
+      const on = playing && c.dataset.track === curUrl;
+      c.classList.toggle('loud', on);
+      const b = c.querySelector('.mute');
+      b.setAttribute('aria-pressed', on);
+      b.setAttribute('aria-label', (on ? 'Pausar ' : 'Reproducir ') + c.querySelector('h3').textContent);
+    });
+  };
+  const ready = new Promise(res => {
+    const s = document.createElement('script');
+    s.src = 'https://w.soundcloud.com/player/api.js';
+    s.onload = () => {
+      W = SC.Widget(scFrame);
+      W.bind(SC.Widget.Events.READY, () => {
+        if (bound) return; bound = true;
+        W.bind(SC.Widget.Events.PLAY, () => { playing = true; ui(); });
+        W.bind(SC.Widget.Events.PAUSE, () => { playing = false; ui(); });
+        W.bind(SC.Widget.Events.FINISH, () => { playing = false; ui(); });
+        W.bind(SC.Widget.Events.PLAY_PROGRESS, e => {
+          const t = Math.floor(e.currentPosition / 1000);
+          time.textContent = String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(t % 60).padStart(2, '0');
+        });
+        res();
+      });
+    };
+    document.head.appendChild(s);
+  });
+  const playTrack = url => {
+    if (!W) { ready.then(() => playTrack(url)); return; }
+    if (url === curUrl) { W.toggle(); return; }
+    curUrl = url; time.textContent = '00:00'; playing = false; ui();
+    W.load(url, {auto_play: true, visual: false, show_comments: false});
+  };
+  sound.addEventListener('click', () => playTrack(curUrl));
+  document.getElementById('play').addEventListener('click', () => playTrack(curUrl));
+  cards.forEach(c => c.querySelector('.mute').addEventListener('click', e => { e.stopPropagation(); playTrack(c.dataset.track); }));
+  ui();
+
+  // animated waveform
+  const wave = document.getElementById('wave');
+  let t = 0;
+  const draw = () => {
+    const loud = playing;
+    let d = 'M0 17';
+    for (let x = 0; x <= 340; x += 4) {
+      const a = (loud ? 13 : 4) * Math.sin(x*0.09 + t) * Math.sin(x*0.021 - t*0.6) * (0.4 + 0.6*Math.abs(Math.sin(x*0.013 + t*0.3)));
+      d += ` L${x} ${(17 + a).toFixed(1)}`;
+    }
+    wave.setAttribute('d', d);
+    t += loud ? 0.12 : 0.04;
+    if (!reduce) requestAnimationFrame(draw);
+  };
+  draw();
+
+  // autoplay reels in view, pause out of view
+  if ('IntersectionObserver' in window) {
+    const vo = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) e.target.play().catch(()=>{}); else e.target.pause();
+    }), {threshold: .25});
+    reels.forEach(v => vo.observe(v));
+
+    // reveal (only for elements below the fold at load)
+    const ro = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.remove('pre'); ro.unobserve(e.target); }
+    }), {threshold: .12, rootMargin: '0px 0px -40px 0px'});
+    if (!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      document.querySelectorAll('[data-reveal]').forEach(el => {
+        if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('pre'); ro.observe(el); }
+      });
+      setTimeout(() => document.querySelectorAll('.pre').forEach(el => el.classList.remove('pre')), 6000);
+    }
+  } else reels.forEach(v => v.play().catch(()=>{}));
+
+  // custom cursor: glowing lime trail + orbit on links
+  if (matchMedia('(hover:hover) and (pointer:fine)').matches && !reduce) {
+    const cur = document.getElementById('cur'), orbit = cur.querySelector('.orbit');
+    const N = 20, pts = [];
+    for (let i = 0; i < N; i++) {
+      const d = document.createElement('i');
+      const sz = 26 - i * 1.19;
+      d.style.width = d.style.height = sz + 'px';
+      d.style.margin = (-sz/2) + 'px 0 0 ' + (-sz/2) + 'px';
+      d.style.opacity = (0.6 - i * 0.028).toFixed(3);
+      d.style.filter = `blur(${(i * 0.29).toFixed(2)}px)`;
+      cur.appendChild(d); pts.push({el:d, x:-100, y:-100});
+    }
+    let mx = -100, my = -100, shown = false;
+    document.documentElement.classList.add('has-cur');
+    addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; if (!shown) { shown = true; pts.forEach(p => { p.x = mx; p.y = my; }); } }, {passive:true});
+    document.addEventListener('mouseleave', () => cur.style.opacity = 0);
+    document.addEventListener('mouseenter', () => cur.style.opacity = 1);
+    document.addEventListener('mouseover', e => cur.classList.toggle('hot', !!e.target.closest('a,button,[data-lb],.panel,video')));
+    const loop = () => {
+      let x = mx, y = my;
+      pts.forEach((p, i) => {
+        p.x += (x - p.x) * (i ? 0.42 : 1); p.y += (y - p.y) * (i ? 0.42 : 1);
+        p.el.style.transform = `translate3d(${p.x}px,${p.y}px,0)`;
+        x = p.x; y = p.y;
+      });
+      orbit.style.left = mx + 'px'; orbit.style.top = my + 'px';
+      requestAnimationFrame(loop);
+    };
+    loop();
+  }
+
+  // lightbox
+  const lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg'), lbcap = document.getElementById('lbcap');
+  let last = null;
+  const open = el => {
+    last = el; lbimg.src = el.dataset.lb; lbimg.alt = el.dataset.cap || ''; lbcap.textContent = el.dataset.cap || '';
+    lb.classList.add('open'); document.getElementById('lbx').focus();
+  };
+  const close = () => { lb.classList.remove('open'); last?.focus(); };
+  document.querySelectorAll('[data-lb]').forEach(el => {
+    el.addEventListener('click', () => open(el));
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' && el.tagName === 'FIGURE') open(el); });
+  });
+  document.getElementById('lbx').addEventListener('click', close);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
+
+  // 03 coverflow
+  (() => {
+    const stage = document.getElementById('cfStage'); if (!stage) return;
+    const cards = [...stage.querySelectorAll('.cf-card')], n = cards.length;
+    const data = [
+      {t:'Hard Expression', m:'SECRET LOCATION<br>15 DE MARZO · DE 9:00 A 21:00', p:'Doce horas de hardtechno con Manu Kane, Sata, Falsojudas, Punto, Davit Error, Mauro Silva y Riuk.', cap:'Hard Expression · Secret location'},
+      {t:'Komando Tecno', m:'UNDERLAND · MASSANASSA<br>27 SEPTIEMBRE 2024 · 23:45 — 7:30', p:'Riuk abre cartel con Jota de Copas, Dark Sánchez, Sata, Raspa y Kelo.', cap:'Komando Tecno · Underland'},
+      {t:'Tekniversario', m:'UNDERLAND · MASSANASSA<br>19 JULIO 2024', p:'El aniversario de la casa con Dharma, Sarakaos, Fiera, Oxidose, Manu Kane y Riuk.', cap:'Tekniversario 2024'},
+      {t:'Maaacarena', m:'HARDTECHNO &amp; BAKALAO<br>20 ABRIL 2024', p:'Una noche de hardtechno y bakalao con Sata, Dark Sánchez, Manuelotek, Falsojudas y Raspa.', cap:'Maaacarena · Hardtechno & bakalao'},
+      {t:'Toka Tecno', m:'FUNKY FOOD · CALIXT III, EXTRAMURS<br>7 MARZO 2024 · 23:00 A CIERRE', p:'Riuk y Dark Sánchez mano a mano, con entrada gratuita.', cap:'Toka Tecno · Funky Food'},
+      {t:'Hard Expression', m:'ON AIR · C/ ENRIQUE NAVARRO 8<br>29 FEBRERO · 22:30', p:'Techno y hard techno con Manu Kane y Seon (Stay Up Forever, Cluster Records).', cap:'Hard Expression · On Air'},
+      {t:'Cumple Riuk', m:'UNDERLAND · MASSANASSA<br>26 ENERO 2024 · 00:30 — 7:30', p:'Su cumpleaños, a su manera: underground techno con Manu Kane, Jorge Carreras, Dark Sánchez y Jota de Copas.', cap:'Cumple Riuk · Underland'},
+      {t:'Komando Tecno', m:'ESPECIAL NOCHEBUENA<br>24 DICIEMBRE 2023 · 00:30 — 8:30', p:'Nochebuena en Underland con Manu Kane, Josese, Kelo, Jota de Copas y Dark Sánchez.', cap:'Komando Tecno · Nochebuena'},
+      {t:'Tekniversario', m:'ACID RESISTANCE &amp; UNDERLAND<br>22 JULIO 2023 · 23:00 — 7:30', p:'Con Geezer como cabeza de cartel, junto a Zyco, Void, Kelo, Manu Kane y Riuk.', cap:'Tekniversario 2023 · Geezer'}
+    ];
+    const txt = document.getElementById('cfTxt'), num = document.getElementById('cfNum'), ti = document.getElementById('cfTitle'),
+          me = document.getElementById('cfMeta'), pp = document.getElementById('cfText'), bar = document.getElementById('cfBar');
+    let cur = 0, drag = 0, tx = 0, ty = 0;
+    const off = i => { let o = i - cur; if (o > n/2) o -= n; if (o < -n/2) o += n; return o; };
+    const render = () => {
+      const w = stage.clientWidth || 600;
+      cards.forEach((c, i) => {
+        const o = off(i) + drag / (w * .45);
+        const a = Math.min(Math.abs(o), 1.6);
+        const on = Math.abs(off(i)) === 0 && !drag;
+        const rx = on ? -ty * 10 : 0, ry = on ? tx * 14 : 0;
+        c.style.transform = `translate(-50%,-50%) translateX(${o * 64}%) translateZ(${-a * 220}px) rotateY(${-o * 36 + ry}deg) rotateX(${rx}deg) scale(${1 - a * .14})`;
+        c.style.zIndex = 10 - Math.round(a * 3);
+        c.style.opacity = a > 1.4 ? 0 : 1 - a * .35;
+        c.style.filter = `brightness(${1 - a * .45}) saturate(${1 - a * .3})`;
+        c.classList.toggle('on', on);
+      });
+    };
+    const info = () => {
+      txt.classList.add('swap');
+      setTimeout(() => {
+        const d = data[cur]; num.textContent = String(cur + 1).padStart(2, '0');
+        ti.textContent = d.t; me.innerHTML = d.m; pp.textContent = d.p; txt.classList.remove('swap');
+      }, 260);
+      bar.style.width = ((cur + 1) / n * 100) + '%';
+    };
+    const go = k => { cur = (k + n) % n; drag = 0; render(); info(); };
+    const big = () => open({dataset:{lb: cards[cur].querySelector('img').getAttribute('src'), cap: data[cur].cap}, focus(){}});
+    document.getElementById('cfPrev').onclick = () => { go(cur - 1); hold(); };
+    document.getElementById('cfNext').onclick = () => { go(cur + 1); hold(); };
+    document.getElementById('cfOpen').onclick = big;
+    stage.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') go(cur - 1); if (e.key === 'ArrowRight') go(cur + 1); if (e.key === 'Enter') big(); });
+    let sx = null, sy = 0, moved = 0;
+    stage.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; moved = 0; stage.setPointerCapture(e.pointerId); hold(); });
+    stage.addEventListener('pointermove', e => {
+      if (sx !== null) {
+        const dx = e.clientX - sx;
+        if (Math.abs(dx) > 6) { moved = 1; stage.classList.add('drag'); drag = dx; render(); }
+      } else if (e.pointerType === 'mouse') {
+        const r = stage.getBoundingClientRect();
+        tx = (e.clientX - r.left) / r.width - .5; ty = (e.clientY - r.top) / r.height - .5;
+        cards[cur].style.setProperty('--gx2', ((tx + .5) * 100) + '%'); cards[cur].style.setProperty('--gy2', ((ty + .5) * 100) + '%');
+        render();
+      }
+    });
+    const end = e => {
+      if (sx === null) return;
+      const dx = e.clientX - sx; sx = null; stage.classList.remove('drag');
+      if (!moved) {
+        const hit = cards.findIndex(c => c.contains(document.elementFromPoint(e.clientX, e.clientY)));
+        if (hit === cur) big(); else if (hit > -1) go(hit); else { drag = 0; render(); }
+      } else if (dx < -60) go(cur + 1); else if (dx > 60) go(cur - 1); else { drag = 0; render(); }
+    };
+    stage.addEventListener('pointerup', end); stage.addEventListener('pointercancel', end);
+    stage.addEventListener('mouseleave', () => { tx = ty = 0; render(); });
+    let timer, paused = 0;
+    const hold = () => { paused = Date.now(); };
+    if (!reduce) timer = setInterval(() => {
+      const r = stage.getBoundingClientRect();
+      if (Date.now() - paused > 7000 && r.top < innerHeight && r.bottom > 0 && !stage.matches(':hover') && !document.getElementById('lb').classList.contains('open')) go(cur + 1);
+    }, 4500);
+    addEventListener('resize', render);
+    render();
+  })();
+
+  // 05 deck of cards
+  (() => {
+    const deck = document.getElementById('deck'); if (!deck) return;
+    let order = [...deck.querySelectorAll('.dk')];
+    const rots = [0, 5, -6, 3], numEl = document.getElementById('dkNum'), total = order.length;
+    let shown = 0;
+    const layout = () => {
+      order.forEach((c, k) => {
+        c.classList.toggle('top', k === 0);
+        c.style.zIndex = total - k;
+        c.style.transform = `translate(${k * 14}px, ${k * -12}px) rotate(${rots[k] || 0}deg) scale(${1 - k * .05})`;
+        c.style.opacity = k > 3 ? 0 : 1;
+        const v = c.querySelector('video'); if (v) { if (k === 0) v.play().catch(()=>{}); }
+      });
+      numEl.textContent = String(shown % total + 1).padStart(2, '0');
+    };
+    const fly = dir => {
+      const c = order[0];
+      c.style.transform = `translate(${dir * 130}%, -6%) rotate(${dir * 28}deg)`; c.style.opacity = 0;
+      setTimeout(() => {
+        order.push(order.shift()); shown++;
+        c.style.transition = 'none'; c.style.zIndex = 0; layout();
+        requestAnimationFrame(() => requestAnimationFrame(() => { c.style.transition = ''; c.style.opacity = 1; }));
+      }, 380);
+    };
+    const back = () => {
+      const c = order.pop(); order.unshift(c); shown = (shown - 1 + total) % total;
+      c.style.transition = 'none'; c.style.transform = 'translate(-130%, -6%) rotate(-28deg)'; c.style.opacity = 0; c.style.zIndex = total + 1;
+      requestAnimationFrame(() => requestAnimationFrame(() => { c.style.transition = ''; layout(); }));
+    };
+    document.getElementById('dkNext').onclick = () => fly(1);
+    document.getElementById('dkPrev').onclick = back;
+    let sx = null, sy = 0, dx = 0, dy = 0, moved = 0;
+    deck.addEventListener('pointerdown', e => {
+      if (e.target.closest('button')) return;
+      sx = e.clientX; sy = e.clientY; dx = dy = 0; moved = 0; deck.setPointerCapture(e.pointerId);
+    });
+    deck.addEventListener('pointermove', e => {
+      if (sx === null) return;
+      dx = e.clientX - sx; dy = e.clientY - sy;
+      if (Math.abs(dx) > 6) { moved = 1; deck.classList.add('drag'); order[0].style.transform = `translate(${dx}px, ${dy * .25}px) rotate(${dx / 16}deg)`; }
+    });
+    const end = () => {
+      if (sx === null) return; sx = null; deck.classList.remove('drag');
+      if (!moved) { const c = order[0]; if (c.dataset.src) open({dataset:{lb:c.dataset.src, cap:c.dataset.cap}, focus(){}}); return; }
+      if (Math.abs(dx) > 90) fly(Math.sign(dx)); else layout();
+    };
+    deck.addEventListener('pointerup', end); deck.addEventListener('pointercancel', end);
+    layout();
+  })();
+
+  // 02 reels: expand on hover + tilt; phone: swipe with depth
+  (() => {
+    const box = document.getElementById('reels'); if (!box) return;
+    const rs = [...box.querySelectorAll('.reel')], dots = [...document.querySelectorAll('#reelDots i')];
+    const fine = matchMedia('(hover:hover) and (pointer:fine)');
+    const act = el => rs.forEach(r => r.classList.toggle('act', r === el));
+    act(rs[0]);
+    rs.forEach(r => {
+      r.addEventListener('mouseenter', () => { if (fine.matches) act(r); });
+      r.addEventListener('click', e => { if (!e.target.closest('button')) act(r); });
+      r.addEventListener('mousemove', e => {
+        if (!fine.matches || !r.classList.contains('act')) return;
+        const b = r.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5;
+        r.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 6}deg) translateZ(10px)`;
+        r.style.setProperty('--mx', (x + .5) * 100 + '%'); r.style.setProperty('--my', (y + .5) * 100 + '%');
+      });
+      r.addEventListener('mouseleave', () => { r.style.transform = ''; });
+    });
+    const onScroll = () => {
+      if (fine.matches || box.scrollWidth <= box.clientWidth + 4) { rs.forEach(r => { if (!fine.matches) r.style.transform = ''; }); return; }
+      const c = box.getBoundingClientRect(), mid = c.left + c.width / 2; let best = 0, bd = 1e9;
+      rs.forEach((r, i) => {
+        const b = r.getBoundingClientRect(), d = (b.left + b.width / 2 - mid) / b.width;
+        if (Math.abs(d) < bd) { bd = Math.abs(d); best = i; }
+        const a = Math.min(Math.abs(d), 1);
+        r.style.transform = `rotateY(${-d * 18}deg) scale(${1 - a * .1})`;
+        r.style.opacity = 1 - a * .35;
+      });
+      dots.forEach((dt, i) => dt.classList.toggle('on', i === best));
+      act(rs[best]);
+    };
+    box.addEventListener('scroll', onScroll, {passive:true}); addEventListener('resize', onScroll); onScroll();
+  })();
+
+  // 06 studio compare slider
+  (() => {
+    const c = document.getElementById('cmp'); if (!c) return;
+    let p = 50, dragging = false;
+    const set = v => { p = Math.max(3, Math.min(97, v)); c.style.setProperty('--p', p + '%'); c.setAttribute('aria-valuenow', Math.round(p)); };
+    const at = e => { const b = c.getBoundingClientRect(); set((e.clientX - b.left) / b.width * 100); };
+    c.addEventListener('pointerdown', e => { dragging = true; c.setPointerCapture(e.pointerId); at(e); });
+    c.addEventListener('pointermove', e => { if (dragging) at(e); });
+    c.addEventListener('pointerup', () => dragging = false); c.addEventListener('pointercancel', () => dragging = false);
+    c.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') set(p - 5); if (e.key === 'ArrowRight') set(p + 5); });
+    if (!reduce && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(en => {
+        if (!en.isIntersecting) return; io.disconnect();
+        const seq = [50, 22, 78, 50]; let k = 0, t0 = null;
+        const step = ts => {
+          if (dragging) return; if (t0 === null) t0 = ts;
+          const f = Math.min((ts - t0) / 700, 1), e2 = f < .5 ? 2*f*f : 1 - Math.pow(-2*f + 2, 2) / 2;
+          set(seq[k] + (seq[k+1] - seq[k]) * e2);
+          if (f === 1) { k++; t0 = null; if (k >= seq.length - 1) return; }
+          requestAnimationFrame(step);
+        };
+        setTimeout(() => requestAnimationFrame(step), 400);
+      }), {threshold: .5});
+      io.observe(c);
+    }
+  })();
+
+  // 07 gallery: drifting strip, drag with inertia, skew by speed
+  (() => {
+    const gal = document.getElementById('gal'), tr = document.getElementById('galTrack'); if (!gal) return;
+    let x = 0, v = 0, auto = reduce ? 0 : -0.45, drag = false, lx = 0, moved = 0, sk = 0, startX = 0;
+    const half = () => tr.scrollWidth / 2;
+    gal.addEventListener('pointerdown', e => { drag = true; moved = 0; lx = startX = e.clientX; v = 0; gal.classList.add('drag'); gal.setPointerCapture(e.pointerId); });
+    gal.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - lx; lx = e.clientX; x += dx; v = dx; if (Math.abs(e.clientX - startX) > 6) moved = 1; });
+    const end = e => {
+      if (!drag) return; drag = false; gal.classList.remove('drag');
+      if (!moved) { const f = document.elementFromPoint(e.clientX, e.clientY)?.closest('.gi'); if (f) open({dataset:{lb:f.dataset.src, cap:f.dataset.cap}, focus(){}}); }
+    };
+    gal.addEventListener('pointerup', end); gal.addEventListener('pointercancel', end);
+    let hover = false; gal.addEventListener('mouseenter', () => hover = true); gal.addEventListener('mouseleave', () => hover = false);
+    const loop = () => {
+      if (!drag) { v *= .94; x += v + (hover ? auto * .3 : auto); }
+      const h = half(); if (h) { if (x < -h) x += h; if (x > 0) x -= h; }
+      sk += ((Math.max(-12, Math.min(12, v * .6))) - sk) * .15;
+      tr.style.transform = `translate3d(${x}px,0,0)`;
+      tr.style.setProperty('--sk', sk.toFixed(2) + 'deg');
+      requestAnimationFrame(loop);
+    };
+    loop();
+  })();
+})();
 </script>
 </body>
 </html>
